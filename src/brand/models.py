@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class Page(models.Model):
+    title = models.CharField(blank=False, null=False, max_length=16)

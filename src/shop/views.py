@@ -4,8 +4,8 @@ from .models import Product
 
 
 def shop_view(request, *args, **kwargs):
-    obj = Product.objects.get(id=1)
+    products_list = Product.objects.all()
     context = {
-        'object': obj,
+        'products_list': products_list,
     }
     return render(request, 'shop.html', context)
