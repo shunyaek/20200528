@@ -2,11 +2,13 @@
 
 {% block content %}
 <section class="shopping-grid">
+    {% for product in products_list %}
     <article class="card">
         <img src="https://source.unsplash.com/sqaure">
-        <h2>{{ object.title }}</h2>
-        <p>{{ object.summary }}</p>
-        <h4>${{ object.price }}</h4>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.summary }}</p>
+        <h4>${{ product.price }}</h4>
     </article>
+    {% endfor %}
 </section>
 {% endblock %}
