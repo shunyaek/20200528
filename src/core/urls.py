@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from brand.views import index_view
 from shop.views import shop_view
+from blog.views import blog_view
 
 urlpatterns = [
     path('', index_view, name='Home'),
     path('shop/', shop_view, name='Shop'),
+    path('blog/', blog_view, name='Blog'),
     path('admin/', admin.site.urls),
 ]
