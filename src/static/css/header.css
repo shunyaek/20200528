@@ -192,6 +192,10 @@ header {
         display: flex;
     }
 
+    .search form {
+        display: flex;
+    }
+
     .social-media-links {
         display: flex;
     }

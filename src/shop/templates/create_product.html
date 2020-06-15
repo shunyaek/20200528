@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <form method="POST">
+        {% csrf_token %}
+        {{ create_product_form.as_p }}
+        <input type="submit" id="create" name="create" placeholder="Create">
+    </form>
+</section>
+{% endblock %}
