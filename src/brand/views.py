@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.models import User
 
 from .forms import SearchForm
 
@@ -11,7 +12,7 @@ def search_view(request, *args, **kwargs):
         search_form = SearchForm(request.POST or None)
 
     context = {
-        'search_form': search_form,
+        "search_form": search_form,
     }
 
     return render(request, "search.html", context)
@@ -20,3 +21,7 @@ def search_view(request, *args, **kwargs):
 def index_view(request, *args, **kwargs):
     context = {}
     return render(request, "index.html", context)
+
+
+def create_user(request, *args, **kwargs):
+    pass

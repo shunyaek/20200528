@@ -10,20 +10,31 @@ class CreateProductForm(forms.ModelForm):
             "summary",
             "description",
             "price",
-            "discount_availability",
+            "images" "discount_availability",
             "discount",
             "availability_status",
             "featured",
         }
 
 
-class ReadProductForm(forms.ModelForm):
-    pass
-
-
 class UpdateProductForm(forms.ModelForm):
-    pass
+    class Meta:
+        model = Product
+        fields = {
+            "title",
+            "summary",
+            "description",
+            "price",
+            "images" "discount_availability",
+            "discount",
+            "availability_status",
+            "featured",
+        }
 
 
 class DeleteProductForm(forms.ModelForm):
-    pass
+    class Meta:
+        model = Product
+        fields = {
+            "confirmation",
+        }

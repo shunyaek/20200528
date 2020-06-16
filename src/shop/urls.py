@@ -12,7 +12,7 @@ app_name = 'shop'
 urlpatterns = [
     path('', shop_view, name='shop-home'),
     path('create/', create_product_view, name='create-product'),
-    path('read/', read_product_view, name='read-product'),
-    path('update/', update_product_view, name='update-product'),
-    path('delete/', delete_product_view, name='delete-product'),
+    path('<int:id>/', read_product_view, name='read-product'),
+    path('<int:id>/update/', update_product_view, name='update-product'),
+    path('<int:id>/delete/', delete_product_view, name='delete-product'),
 ]

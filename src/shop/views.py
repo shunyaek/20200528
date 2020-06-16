@@ -31,5 +31,27 @@ def create_product_view(request, *args, **kwargs):
     return render(request, "create_product.html", context)
 
 
+def update_product_view(request, *args, **kwargs):
+    update_product_form = UpdateProductForm(request.POST or None)
+    if update_product_form.is_valid():
+        update_product_form.save()
+        update_product_form = UpdateProductForm(request.POST or None)
+
+    context = {
+        "update_product_form": update_product_form,
+    }
+
+    return render(request, "update_product.html", context)
+
+
 def delete_product_view(request, *args, **kwargs):
     delete_product_form = DeleteProductForm(request.POST or None)
+    if delete_product_form.is_valid():
+        delete_product_form.save()
+        delete_product_form = DeleteProductForm(request.POST or None)
+
+    context = {
+        "delete_product_form": delete_product_form,
+    }
+
+    return render(request, "delete_product.html", context)
