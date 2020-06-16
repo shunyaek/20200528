@@ -2,7 +2,7 @@ from django import forms
 from .models import Product
 
 
-class ProductForm(forms.ModelForm):
+class CreateProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = {
@@ -15,3 +15,15 @@ class ProductForm(forms.ModelForm):
             "availability_status",
             "featured",
         }
+
+
+class ReadProductForm(forms.ModelForm):
+    pass
+
+
+class UpdateProductForm(forms.ModelForm):
+    pass
+
+
+class DeleteProductForm(forms.ModelForm):
+    pass
