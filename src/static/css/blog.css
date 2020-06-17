@@ -1,58 +1,79 @@
 @import url('./root.css');
 
-.blog-grid {
-    font-family: var(--other-font);
+.blog-post {
     margin: var(--standard-margin);
-    padding: calc(var(--standard-padding) * 6);
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-gap: 4vmin;
-    gap: 4vmin;
 }
 
-.blog-post-card {
-    background-color: white;
+.post-widget {
+    margin: var(--standard-margin);
+    padding: var(--standard-padding);
+    display: grid;
+    grid-template-rows: 2fr, 1fr;
+    grid-gap: 2vmin;
+    gap: 2vmin;
     border: 0.2rem solid var(--placeholder-border);
     border-radius: 0.5rem;
-    transition: 0.5s;
 }
 
-.blog-post-card:hover {
-    box-shadow: 0 30px 20px -20px var(--shadow-dark);
+.post-widget div {
+    padding: 0rem;
+    margin: 0rem;
+    direction: ltr;
 }
 
-.blog-post-card img {
+.post-widget img {
     border: 0.2rem solid var(--placeholder-border);
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-radius: 0.5rem;
     width: 100%;
     height: auto;
     vertical-align: middle;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
-.blog-post-card h2,
-.blog-post-card p {
-    margin: var(--standard-margin);
+.post-widget p,
+.post-widget h2 {
     padding: var(--standard-padding);
-    text-align: center;
+    margin: calc(var(--standard-margin) / 4);
+    direction: ltr;
 }
 
-.blog-post-card h2 {
-    font-weight: 500;
-}
-
-.blog-post-card p {
-    font-size: clamp(80%, 0.5rem + 2vw, 0.5rem);
+.post-widget button {
+    background-color: var(--theme-color-background);
+    color: var(--theme-color-primary);
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--theme-color-secondary);
+    box-shadow: 0 4px 14px 0 var(--shadow-secondary);
+    padding-left: calc(var(--standard-padding) * 3);
+    padding-right: calc(var(--standard-padding) * 3);
+    padding-top: var(--standard-padding);
+    padding-bottom: var(--standard-padding);
+    margin: calc(var(--standard-margin) / 4);
+    font-size: clamp(100%, 1rem + 2vw, 1.5rem);
+    direction: ltr;
 }
 
 @media screen and (min-width: 900px) {
-    .blog-grid {
-        font-family: var(--other-font);
+
+    .blog-post {
+        margin: calc(var(--standard-margin) * 4);
+    }
+
+    .post-widget {
         margin: var(--standard-margin);
-        padding: calc(var(--standard-padding) * 6);
+        padding: var(--standard-padding);
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 4vmin;
-        gap: 4vmin;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2vmin;
+        gap: 2vmin;
+    }
+
+    .blog-post:nth-of-type(even) {
+        direction: rtl;
+    }
+
+    .post-widget div {
+        padding: 0rem;
+        margin: 0rem;
     }
 }

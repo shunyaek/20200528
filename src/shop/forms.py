@@ -10,7 +10,7 @@ class CreateProductForm(forms.ModelForm):
             "summary",
             "description",
             "price",
-            "images" "discount_availability",
+            "discount_availability",
             "discount",
             "availability_status",
             "featured",
@@ -25,16 +25,16 @@ class UpdateProductForm(forms.ModelForm):
             "summary",
             "description",
             "price",
-            "images" "discount_availability",
+            "discount_availability",
             "discount",
             "availability_status",
             "featured",
         }
 
 
-class DeleteProductForm(forms.ModelForm):
+""" class DeleteProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = {
             "confirmation",
-        }
+        } """

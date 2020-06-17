@@ -79,10 +79,10 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "harshitd",
-        "USER": "harshitd",
+        "NAME": "harshit_doshi",
+        "USER": "harshit_doshi",
         "PASSWORD": os.environ["PGSQL_DB_PASSWORD"],
-        "HOST": "li1989-90.members.linode.com",
+        "HOST": "139.59.5.145",
         "PORT": "5432",
     }
 }

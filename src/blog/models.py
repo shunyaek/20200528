@@ -20,4 +20,4 @@ class Post(models.Model):
     content = models.TextField()
     summary = models.TextField()
     featured = models.BooleanField(default=False)
-    thumbnail = models.ImageField()
+    image = models.ImageField()

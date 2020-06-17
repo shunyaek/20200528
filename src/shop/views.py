@@ -4,9 +4,7 @@ from django.shortcuts import render
 from .models import Product
 from .forms import (
     CreateProductForm,
-    ReadProductForm,
     UpdateProductForm,
-    DeleteProductForm,
 )
 
 
@@ -44,7 +42,7 @@ def update_product_view(request, *args, **kwargs):
     return render(request, "update_product.html", context)
 
 
-def delete_product_view(request, *args, **kwargs):
+""" def delete_product_view(request, *args, **kwargs):
     delete_product_form = DeleteProductForm(request.POST or None)
     if delete_product_form.is_valid():
         delete_product_form.save()
@@ -54,4 +52,4 @@ def delete_product_view(request, *args, **kwargs):
         "delete_product_form": delete_product_form,
     }
 
-    return render(request, "delete_product.html", context)
+    return render(request, "delete_product.html", context) """

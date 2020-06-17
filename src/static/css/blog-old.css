@@ -1,0 +1,58 @@
+@import url('./root.css');
+
+.blog-grid {
+    font-family: var(--other-font);
+    margin: var(--standard-margin);
+    padding: calc(var(--standard-padding) * 6);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 4vmin;
+    gap: 4vmin;
+}
+
+.blog-post-card {
+    background-color: white;
+    border: 0.2rem solid var(--placeholder-border);
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}
+
+.blog-post-card:hover {
+    box-shadow: 0 30px 20px -20px var(--shadow-dark);
+}
+
+.blog-post-card img {
+    border: 0.2rem solid var(--placeholder-border);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.blog-post-card h2,
+.blog-post-card p {
+    margin: var(--standard-margin);
+    padding: var(--standard-padding);
+    text-align: center;
+}
+
+.blog-post-card h2 {
+    font-weight: 500;
+}
+
+.blog-post-card p {
+    font-size: clamp(80%, 0.5rem + 2vw, 0.5rem);
+}
+
+@media screen and (min-width: 900px) {
+    .blog-grid {
+        font-family: var(--other-font);
+        margin: var(--standard-margin);
+        padding: calc(var(--standard-padding) * 6);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4vmin;
+        gap: 4vmin;
+    }
+}
