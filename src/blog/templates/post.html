@@ -3,9 +3,11 @@
 {% block content %}
 <article class="post-article">
     <h1 class="post-title">{{ post.title|title }}</h1>
-    <p class="post-meta">Posted on <time datetime="{{ post.publication_date }}">{{ post.publication_date }}</time> by <span>{{ post.author }}</span></p>
+    <p class="post-meta">Posted on <time datetime="{{ post.publication_date }}">{{ post.publication_date }}</time>.</p>
     <section class="post-content">
-        <img src="{{ post.image.url }}" alt="test" class="post-image">
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+        {% endif %}
         <p class="post-text">{{ post.content|linebreaksbr }}</p>
     </section>
 </article>

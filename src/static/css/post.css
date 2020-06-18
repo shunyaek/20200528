@@ -19,9 +19,7 @@
     text-align: center;
 }
 
-.post-meta time,
-.post-meta span {
-    font-style: italic;
+.post-meta time {
     font-weight: bold;
 }
 

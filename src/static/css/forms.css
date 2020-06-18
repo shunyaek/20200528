@@ -1,0 +1,72 @@
+@import url('./root.css');
+
+.form-heading {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+}
+
+.form-heading h2 {
+    max-width: 80rem;
+    padding-left: var(--standard-padding);
+    padding-right: var(--standard-padding);
+    margin: var(--standard-margin);
+    text-align: center;
+    color: var(--theme-color-primary);
+    font-family: var(--other-font);
+    font-size: clamp(100%, 3rem + 2vw, 3rem);
+}
+
+.form {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+}
+
+.form p {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+}
+
+.form form {
+    max-width: 80rem;
+    margin: var(--standard-margin);
+}
+
+.form button, input, select, textarea {
+    max-width: 80rem;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input,
+.form textarea {
+    border: var(--placeholder-border);
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.form input:hover,
+.form input:focus,
+.form textarea:hover,
+.form textarea:focus {
+    border: 0.01rem solid var(--theme-color-primary);
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.form button {
+    background-color: var(--theme-color-secondary);
+    color: var(--theme-color-background);
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--theme-color-secondary);
+    box-shadow: 0 4px 14px 0 var(--shadow-secondary);
+    padding-left: calc(var(--standard-padding) * 3);
+    padding-right: calc(var(--standard-padding) * 3);
+    padding-top: var(--standard-padding);
+    padding-bottom: var(--standard-padding);
+    font-size: clamp(100%, 1rem + 2vw, 1.5rem);
+}
