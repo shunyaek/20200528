@@ -64,7 +64,8 @@ def delete_post_view(request, pk, *args, **kwargs):
     post_object = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         post_object.delete()
-        return redirect('../')
+        return redirect('../../')
     context = {
         "post": post_object,
     }
+    return render(request, 'delete_post.html', context)
