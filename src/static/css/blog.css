@@ -1,7 +1,28 @@
 @import url('./root.css');
 
+a.post-link {
+    color: var(--theme-color-primary);
+    text-decoration: none;
+}
+
+a.post-link:link {
+    color: var(--theme-color-primary);
+    text-decoration: none;
+}
+
+a.post-link:visited {
+    color: var(--theme-color-primary);
+    text-decoration: none;
+}
+
 .blog-post {
-    margin: var(--standard-margin);
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    border: 0.01rem solid var(--theme-color-primary);
+}
+
+.blog-post:hover {
+    box-shadow: 0 30px 20px -20px var(--shadow-dark);
 }
 
 .post-widget {
@@ -29,6 +50,8 @@
     vertical-align: middle;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    padding-top: var(--standard-padding);
+    padding-bottom: var(--standard-padding);
 }
 
 .post-widget p,
@@ -55,8 +78,19 @@
 
 @media screen and (min-width: 900px) {
 
+    .post-link:nth-of-type(odd) {
+        direction: rtl;
+    }
+
+    .post-link:nth-of-type(even) {
+        direction: ltr;
+    }
+
     .blog-post {
-        margin: calc(var(--standard-margin) * 4);
+        margin-left: calc(var(--standard-margin) * 4);
+        margin-right: calc(var(--standard-margin) * 4);
+        margin-top: var(--standard-margin);
+        margin-bottom: var(--standard-margin);
     }
 
     .post-widget {
@@ -66,10 +100,6 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2vmin;
         gap: 2vmin;
-    }
-
-    .blog-post:nth-of-type(even) {
-        direction: rtl;
     }
 
     .post-widget div {

@@ -2,17 +2,18 @@
 
 {% block content %}
 {% for post in blog_posts %}
-<div class="blog-post">
-    <section class="post-widget">
-        <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.summary }}</p>
-            <button type="button" class="solid-button">Read more<i class="fas fa-arrow-right"></i></button>
-        </div>
-        <div>
-            <img src="https://source.unsplash.com/1920x1080/" alt="test">
-        </div>
-    </section>
-</div>
+<a href="{% url 'blog:read_post' pk=post.pk %}" class="post-link">
+    <div class="blog-post">
+        <section class="post-widget">
+            <div>
+                <img src="{{ post.image.url }}" alt="test">
+            </div>
+            <div>
+                <h2>{{ post.title|title }}</h2>
+                <p>{{ post.content|truncatewords:50 }}</p>
+            </div>
+        </section>
+    </div>
+</a>
 {% endfor %}
 {% endblock %}

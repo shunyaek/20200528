@@ -1,0 +1,107 @@
+@import url('./root.css');
+
+.post-article {
+    padding: calc(var(--standard-padding) * 8);
+}
+
+.post-title {
+    max-width: 80rem;
+    padding-left: var(--standard-padding);
+    padding-right: var(--standard-padding);
+    margin: var(--centering-margin);
+    text-align: center;
+    color: var(--theme-color-primary);
+    font-family: var(--other-font);
+    font-size: clamp(100%, 3rem + 2vw, 3rem);
+}
+
+.post-meta {
+    text-align: center;
+}
+
+.post-meta time,
+.post-meta span {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.post-content {
+    max-width: 50rem;
+    line-height: 1.25;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 0.2rem solid var(--placeholder-border);
+    border-radius: 0.5rem;
+}
+
+.post-text {
+    max-width: 50rem;
+    text-align: left;
+    margin: var(--centering-margin);
+    padding-top: calc(var(--standard-padding) * 8);
+    padding-left: var(--standard-padding);
+    padding-right: var(--standard-padding);
+    font-size: clamp(100%, 1rem + 2vw, 1rem);
+}
+
+@media screen and (min-width: 900px) {
+    .post-title {
+        max-width: 80rem;
+        padding-left: var(--standard-padding);
+        padding-right: var(--standard-padding);
+        margin: var(--centering-margin);
+        text-align: center;
+        color: var(--theme-color-primary);
+        font-family: var(--other-font);
+        font-size: clamp(100%, 3rem + 2vw, 3rem);
+    }
+    
+    .post-meta {
+        text-align: center;
+    }
+    
+    .post-meta time,
+    .post-meta span {
+        font-style: italic;
+        font-weight: bold;
+    }
+    
+    .post-content {
+        max-width: 50rem;
+        line-height: 1.25;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .post-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border: 0.2rem solid var(--placeholder-border);
+        border-radius: 0.5rem;
+    }
+    
+    .post-text {
+        max-width: 50rem;
+        text-align: left;
+        margin: var(--centering-margin);
+        padding-top: calc(var(--standard-padding) * 8);
+        padding-left: var(--standard-padding);
+        padding-right: var(--standard-padding);
+        font-size: clamp(100%, 1rem + 2vw, 1rem);
+    }
+}

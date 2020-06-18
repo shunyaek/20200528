@@ -1,16 +1,17 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from django.conf import settings
+from django.urls import reverse
 
 
 class Author(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    profile_photo = models.ImageField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    profile_image = models.ImageField(
+        upload_to="authors/{}/profile_images/".format(settings.AUTH_USER_MODEL),
+        default='{% static "default_images/user-solid.svg" %}',
+    )
 
     def __str__(self):
         return self.user.username
-
 
 
 class Post(models.Model):
@@ -18,6 +19,8 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     publication_date = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
-    summary = models.TextField()
     featured = models.BooleanField(default=False)
-    image = models.ImageField()
+    image = models.ImageField(upload_to="posts/images/")
+
+    def get_absolute_url(self):
+        return reverse("blog:read_post", kwargs={"id": self.id})
