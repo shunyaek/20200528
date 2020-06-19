@@ -5,11 +5,7 @@
     <h2>Delete "{{ post.title|title }}"?</h2>
 </div>
 <div class="form">
-    {% if form.is_multipart %}
-    <form enctype="multipart/form-data" action="." method="POST">
-        {% else %}
-        <form action="." method="POST"></form>
-        {% endif %}
+        <form action="." method="POST">
         {% csrf_token %}
         <input type='submit' value='Yes'>
         <a href='../'>Cancel</a>
