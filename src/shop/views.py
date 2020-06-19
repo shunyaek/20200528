@@ -12,6 +12,7 @@ def shop_view(request, *args, **kwargs):
     products_list = Product.objects.all()
     context = {
         "products_list": products_list,
+        "shop_active_state": "active",
     }
     return render(request, "shop.html", context)
 

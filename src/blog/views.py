@@ -16,6 +16,7 @@ def blog_view(request, *args, **kwargs):
     blog_posts = Post.objects.all().order_by('-publication_date')
     context = {
         "blog_posts": blog_posts,
+        "blog_active_state": "active",
     }
     return render(request, "blog.html", context)
 

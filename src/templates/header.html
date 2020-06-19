@@ -14,9 +14,9 @@
         <span class="nav-toggle" id="navbar-menu"><i class="fas fa-bars"></i></span>
     </nav>
     <nav class="nav" id="navbar">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">Presets</a>
-        <a href="blog/">Blog</a>
+        <a class="{{ index_active_state }}" href="{% url 'home' %}">Home</a>
+        <a class="{{ shop_active_state }}" href="{% url 'shop:shop_home' %}">Presets</a>
+        <a class="{{ blog_active_state }}" href="{% url 'blog:blog_home' %}">Blog</a>
         <a href="#about">About</a>
         <a href="#about">Contact</a>
     </nav>

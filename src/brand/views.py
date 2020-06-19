@@ -19,7 +19,9 @@ def search_view(request, *args, **kwargs):
 
 
 def index_view(request, *args, **kwargs):
-    context = {}
+    context = {
+        "index_active_state": "active",
+    }
     return render(request, "index.html", context)
 
 
