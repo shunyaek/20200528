@@ -8,7 +8,7 @@
         <section class="post-widget">
             {% if post.image %}
                 <div>
-                    <img src="{{ post.image.url }}" alt="test">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
                 </div>
             {% else %}
                 <div>

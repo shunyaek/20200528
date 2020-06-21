@@ -28,7 +28,6 @@ class PostForm(forms.ModelForm):
 
     image = forms.ImageField(
         label="Image",
-        allow_empty_file=True,
         widget=forms.ClearableFileInput(attrs={"class": "image-field"}),
         required=False,
     )

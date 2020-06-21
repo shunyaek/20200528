@@ -21,6 +21,7 @@ body {
 main {
     flex-grow: 1;
     margin: var(--centering-margin);
+    font-family: var(--other-font);
 }
 
 .shopping-grid {
@@ -67,10 +68,6 @@ main {
 
 .card p {
     font-size: clamp(80%, 0.5rem + 2vw, 0.5rem);
-}
-
-main {
-    font-family: var(--other-font);
 }
 
 .picture-text {

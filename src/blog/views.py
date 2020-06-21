@@ -23,15 +23,9 @@ def blog_view(request, *args, **kwargs):
 
 def create_post_view(request, *args, **kwargs):
     form = PostForm(request.POST or None)
-    form.field_order = {
-        "title",
-        "image",
-        "content",
-        "featured",
-    }
     if form.is_valid():
         form.save()
-        form = PostForm()
+        form = PostForm(request, *args, **kwargs)
     context = {
         "form": form,
         "page_heading": "Create a blog post",

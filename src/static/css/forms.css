@@ -16,49 +16,49 @@
     font-size: clamp(100%, 3rem + 2vw, 3rem);
 }
 
-.form {
+.form-box {
     padding: var(--standard-padding);
     margin: var(--centering-margin);
 }
 
-.form p {
+.form-box p {
     padding: var(--standard-padding);
     margin: var(--centering-margin);
 }
 
-.form form {
+.form-box form {
     max-width: 80rem;
     margin: var(--standard-margin);
 }
 
-.form button, input, select, textarea {
+.form-box button, input, select, textarea {
     max-width: 80rem;
     font-family: inherit;
     font-size: inherit;
 }
 
-.form label {
+.form-box label {
     display: block;
     font-weight: bold;
 }
 
-.form input,
-.form textarea {
+.form-box input,
+.form-box textarea {
     border: var(--placeholder-border);
     width: 100%;
     border-radius: 0.5rem;
 }
 
-.form input:hover,
-.form input:focus,
-.form textarea:hover,
-.form textarea:focus {
+.form-box input:hover,
+.form-box input:focus,
+.form-box textarea:hover,
+.form-box textarea:focus {
     border: 0.01rem solid var(--theme-color-primary);
     width: 100%;
     border-radius: 0.5rem;
 }
 
-.form button {
+.form-box button {
     background-color: var(--theme-color-secondary);
     color: var(--theme-color-background);
     border-radius: 0.5rem;

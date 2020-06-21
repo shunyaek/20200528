@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 from .forms import SearchForm
 from blog.models import Post
@@ -28,5 +29,11 @@ def index_view(request, *args, **kwargs):
     return render(request, "index.html", context)
 
 
-def create_user(request, *args, **kwargs):
-    pass
+def sign_up_view(request, *args, **kwargs):
+    form = UserCreationForm()
+    context = {
+        "form": form,
+        "page_heading": "Sign-Up",
+        "button_value": "Sign-Up",
+    }
+    return render(request, 'account/sign_up.html', context)
