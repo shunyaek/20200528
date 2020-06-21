@@ -13,7 +13,7 @@ from .forms import PostForm
 
 
 def blog_view(request, *args, **kwargs):
-    blog_posts = Post.objects.all().order_by('-publication_date')
+    blog_posts = Post.objects.all().order_by("-publication_date")
     context = {
         "blog_posts": blog_posts,
         "blog_active_state": "active",
@@ -60,8 +60,8 @@ def delete_post_view(request, pk, *args, **kwargs):
     if request.method == "POST":
         print("Deleted" + str(post_object.title))
         post_object.delete()
-        return redirect('blog:blog_home')
+        return redirect("blog:blog_home")
     context = {
         "post": post_object,
     }
-    return render(request, 'delete_post.html', context)
+    return render(request, "delete_post.html", context)
