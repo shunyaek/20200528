@@ -3,8 +3,7 @@ from django.shortcuts import render
 
 from .models import Product
 from .forms import (
-    CreateProductForm,
-    UpdateProductForm,
+    ProductForm,
 )
 
 
@@ -18,10 +17,10 @@ def shop_view(request, *args, **kwargs):
 
 
 def create_product_view(request, *args, **kwargs):
-    create_product_form = CreateProductForm(request.POST or None)
+    create_product_form = ProductForm(request.POST or None)
     if create_product_form.is_valid():
         create_product_form.save()
-        create_product_form = CreateProductForm(request.POST or None)
+        create_product_form = ProductForm(request.POST or None)
 
     context = {
         "create_product_form": create_product_form,
@@ -31,10 +30,10 @@ def create_product_view(request, *args, **kwargs):
 
 
 def update_product_view(request, *args, **kwargs):
-    update_product_form = UpdateProductForm(request.POST or None)
+    update_product_form = ProductForm(request.POST or None)
     if update_product_form.is_valid():
         update_product_form.save()
-        update_product_form = UpdateProductForm(request.POST or None)
+        update_product_form = ProductForm(request.POST or None)
 
     context = {
         "update_product_form": update_product_form,

@@ -4,24 +4,39 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-""" class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    image = models.ImageField() """
+class Customer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Category(models.Model):
+    title = models.CharField(blank=True, null=True, max_length=256)
+
+    def __str__(self):
+        return self.title
+
+
+class ProductImage(models.Model):
+    title = models.CharField(blank=True, null=True, max_length=256)
+    image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
 
 
 class Product(models.Model):
-    title = models.CharField(blank=False, max_length=128)
-    summary = models.TextField(blank=True, max_length=256)
-    description = models.TextField(blank=True, max_length=None)
-    price = models.DecimalField(blank=False, max_digits=10, decimal_places=2)
-    # images = models.ManyToManyField(ProductImage)
-    discount_availability = models.BooleanField(blank=True, default=False)
-    discount = models.DecimalField(
-        blank=True, null=True, max_digits=5, decimal_places=2
-    )
-    availability_status = models.BooleanField(blank=False, default=True)
-    featured = models.BooleanField(blank=False, default=False)
-    product_added_on = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(blank=False, max_length=128, null=True)
+    description = models.TextField(blank=True, max_length=None, null=True)
+    category = models.ManyToManyField(Category)
+    price = models.DecimalField(blank=False, max_digits=10, decimal_places=2, null=True)
+    images = models.ManyToManyField(ProductImage)
+    discount_availability = models.BooleanField(blank=True, default=False, null=True)
+    discount = models.IntegerField(blank=True, null=True)
+    availability = models.BooleanField(blank=False, default=True, null=True)
+    featured = models.BooleanField(blank=False, default=False, null=True)
+    product_added_on = models.DateTimeField(auto_now_add=True, null=True)
     # slug = models.SlugField()
 
     def __str__(self):
@@ -40,21 +55,14 @@ class Product(models.Model):
     def get_total_number_of_products(self):
         return self.objects.count()
 
+    def get_availability(self):
+        if self.availability:
+            return "In stock"
+        else:
+            return "Out of stock"
 
-class OrderItem(models.Model):
-    item = models.ForeignKey(Product, on_delete=models.CASCADE)
-    is_ordered = models.BooleanField(default=False)
 
-
-class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    items = models.ManyToManyField(OrderItem)
-
-    def __str__(self):
-        return self.user.username
-
-    def get_cart_count(self):
-        return self.items.count()
-
-    """ def get_cart_total(self):
-        return self.items.all().aggregate(Sum()) """
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
+    order_date = models.DateTimeField(auto_now_add=True, null=True)

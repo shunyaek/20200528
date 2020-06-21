@@ -3,10 +3,13 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 
 from .forms import SearchForm
+from blog.models import Post
+from shop.models import Product
 
 
-def search_view(request, *args, **kwargs):
+def search_view(request, search_query, *args, **kwargs):
     search_form = SearchForm(request.POST or None)
+    post_results = Post.objects.get(title__icontains=search_query)
     if search_form.is_valid():
         search_form.save()
         search_form = SearchForm(request.POST or None)
