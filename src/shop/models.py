@@ -20,7 +20,7 @@ class Category(models.Model):
 
 class ProductImage(models.Model):
     title = models.CharField(blank=True, null=True, max_length=256)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to="products/images/")
 
     def __str__(self):
         return self.title

@@ -8,12 +8,12 @@ from django.views.generic import (
     DeleteView,
 )
 
-from .models import Post
-from .forms import PostForm
+from .models import BlogPost
+from .forms import BlogPostForm
 
 
 def blog_view(request, *args, **kwargs):
-    blog_posts = Post.objects.all().order_by("-publication_date")
+    blog_posts = BlogPost.objects.all().order_by("-publication_date")
     context = {
         "blog_posts": blog_posts,
         "blog_active_state": "active",
@@ -22,10 +22,13 @@ def blog_view(request, *args, **kwargs):
 
 
 def create_post_view(request, *args, **kwargs):
-    form = PostForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form = PostForm(request, *args, **kwargs)
+    if request.method == "POST":
+        form = BlogPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            form = BlogPostForm()
+    else:
+        form = BlogPostForm()
     context = {
         "form": form,
         "page_heading": "Create a blog post",
@@ -35,7 +38,7 @@ def create_post_view(request, *args, **kwargs):
 
 
 def read_post_view(request, pk, *args, **kwargs):
-    post_object = get_object_or_404(Post, pk=pk)
+    post_object = get_object_or_404(BlogPost, pk=pk)
     context = {
         "post": post_object,
     }
@@ -43,8 +46,8 @@ def read_post_view(request, pk, *args, **kwargs):
 
 
 def update_post_view(request, pk, *args, **kwargs):
-    post_object = get_object_or_404(Post, pk=pk)
-    form = PostForm(request.POST or None, instance=post_object)
+    post_object = get_object_or_404(BlogPost, pk=pk)
+    form = BlogPostForm(request.POST or None, request.FILES, instance=post_object)
     if form.is_valid():
         form.save()
     context = {
@@ -56,9 +59,9 @@ def update_post_view(request, pk, *args, **kwargs):
 
 
 def delete_post_view(request, pk, *args, **kwargs):
-    post_object = get_object_or_404(Post, pk=pk)
+    post_object = get_object_or_404(BlogPost, pk=pk)
     if request.method == "POST":
-        print("Deleted" + str(post_object.title))
+        print("Deleted: " + str(post_object.title))
         post_object.delete()
         return redirect("blog:blog_home")
     context = {

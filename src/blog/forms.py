@@ -1,22 +1,10 @@
 from django import forms
 from django.forms.utils import ErrorList
 
-from .models import Post
+from .models import BlogPost
 
 
-""" class DivErrorList(ErrorList):
-    def __str__(self):
-        return self.as_divs()
-
-    def as_divs(self):
-        if not self:
-            return ""
-        return '<div class="errorlist">%s</div>' % "".join(
-            ['<div class="error">%s</div>' % e for e in self]
-        ) """
-
-
-class PostForm(forms.ModelForm):
+class BlogPostForm(forms.ModelForm):
 
     title = forms.CharField(
         label="Title",
@@ -58,7 +46,7 @@ class PostForm(forms.ModelForm):
     ]
 
     class Meta:
-        model = Post
+        model = BlogPost
         fields = {
             "title",
             "image",

@@ -6,13 +6,17 @@
 </div>
 <div class="form-box">
     {% if form.is_multipart %}
-    <form enctype="multipart/form-data" action="." method="POST">
-    {% else %}
-    <form action="." method="POST">
-    {% endif %}
-    {% csrf_token %}
+    <form enctype="multipart/form-data" action="" method="POST">
+        {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="{{ button_value|capfirst }}">
     </form>
+    {% else %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{{ button_value|capfirst }}">
+    </form>
+    {% endif %}
 </div>
 {% endblock %}
