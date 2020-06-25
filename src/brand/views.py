@@ -1,9 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
-from .forms import SearchForm
+from .forms import SearchForm, SignUpForm
 from blog.models import BlogPost
 from shop.models import Product
 
@@ -31,10 +30,25 @@ def index_view(request, *args, **kwargs):
 
 
 def sign_up_view(request, *args, **kwargs):
-    form = UserCreationForm()
+    form = SignUpForm()
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('brand:sign_in')
     context = {
         "form": form,
         "page_heading": "Sign-Up",
         "button_value": "Sign-Up",
+    }
+    return render(request, 'account/sign_up.html', context)
+
+
+def sign_in_view(request, *args, **kwargs):
+    form = UserCreationForm()
+    context = {
+        "form": form,
+        "page_heading": "Sign-In",
+        "button_value": "Sign-In",
     }
     return render(request, 'account/sign_up.html', context)

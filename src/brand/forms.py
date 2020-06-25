@@ -1,14 +1,28 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
-class SignUpForm(forms.ModelForm):
+class SignUpForm(UserCreationForm):
+
+    field_order = [
+        "username",
+        "first_name",
+        "last_name",
+        "email",
+        "password1",
+        "password2",
+    ]
+
     class Meta:
+        model = User
         fields = {
+            "username",
             "first_name",
             "last_name",
-            "e-mail",
-            "password",
-            "confirm_password",
+            "email",
+            "password1",
+            "password2",
         }
 
 

@@ -47,9 +47,10 @@ def read_post_view(request, pk, *args, **kwargs):
 
 def update_post_view(request, pk, *args, **kwargs):
     post_object = get_object_or_404(BlogPost, pk=pk)
-    form = BlogPostForm(request.POST or None, request.FILES, instance=post_object)
+    form = BlogPostForm(request.POST and request.FILES, instance=post_object)
     if form.is_valid():
         form.save()
+        form = BlogPostForm()
     context = {
         "form": form,
         "page_heading": "Update blog post",

@@ -5,18 +5,10 @@
     <h2>Are you sure you want to delete "{{ post.title|title }}"?</h2>
 </div>
 <div class="form-box">
-    {% if form.is_multipart %}
     <form enctype="multipart/form-data" action="" method="POST">
         {% csrf_token %}
         <input type='submit' value='Yes, I confirm'>
         <a href='../'>Cancel</a>
     </form>
-    {% else %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        <input type='submit' value='Yes, I confirm'>
-        <a href='../'>Cancel</a>
-    </form>
-    {% endif %}
 </div>
 {% endblock %}

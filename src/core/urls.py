@@ -18,13 +18,13 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from brand.views import search_view, index_view, sign_up_view
+from brand.views import search_view, index_view
 
 urlpatterns = [
     path("", index_view, name="home"),
     path("shop/", include("shop.urls")),
     path("blog/", include("blog.urls")),
     path("search/", search_view, name="search"),
-    path("signup/", sign_up_view, name="sign_up"),
+    path("user/", include("brand.urls")),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
