@@ -1,4 +1,4 @@
-@import url('./root.css');
+@import url("./root.css");
 
 .post-article {
     padding: calc(var(--standard-padding) * 8);
@@ -63,17 +63,17 @@
         font-family: var(--other-font);
         font-size: clamp(100%, 3rem + 2vw, 3rem);
     }
-    
+
     .post-meta {
         text-align: center;
     }
-    
+
     .post-meta time,
     .post-meta span {
         font-style: italic;
         font-weight: bold;
     }
-    
+
     .post-content {
         max-width: 50rem;
         line-height: 1.25;
@@ -83,7 +83,7 @@
         justify-content: center;
         flex-direction: column;
     }
-    
+
     .post-image {
         width: 100%;
         max-width: 100%;
@@ -92,7 +92,7 @@
         border: 0.2rem solid var(--placeholder-border);
         border-radius: 0.5rem;
     }
-    
+
     .post-text {
         max-width: 50rem;
         text-align: left;

@@ -1,10 +1,10 @@
-@import url('./root.css');
-@import url('./header.css');
-@import url('./footer.css');
-@import url('./blog.css');
-@import url('./post.css');
-@import url('./forms.css');
-@import url('./signx.css');
+@import url("./root.css");
+@import url("./header.css");
+@import url("./footer.css");
+@import url("./blog.css");
+@import url("./post.css");
+@import url("./forms.css");
+@import url("./signx.css");
 
 html {
     font-size: var(--base-font-size);
@@ -246,7 +246,6 @@ main {
 }
 
 @media screen and (min-width: 900px) {
-
     .picture-text {
         margin: var(--standard-margin);
         padding: var(--standard-padding);
