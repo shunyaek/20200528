@@ -4,6 +4,7 @@
 @import url('./blog.css');
 @import url('./post.css');
 @import url('./forms.css');
+@import url('./signx.css');
 
 html {
     font-size: var(--base-font-size);

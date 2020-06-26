@@ -1,0 +1,80 @@
+@import url('./root.css');
+
+.signx-form-heading {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+}
+
+.signx-form-heading h2 {
+    max-width: 80rem;
+    padding-left: var(--standard-padding);
+    padding-right: var(--standard-padding);
+    margin: var(--standard-margin);
+    text-align: center;
+    color: var(--theme-color-primary);
+    font-family: var(--other-font);
+    font-size: clamp(100%, 3rem + 2vw, 3rem);
+}
+
+.signx-form-box {
+    padding: calc(var(--standard-padding) * 8);
+    margin: var(--centering-margin);
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    border: 0.01rem solid var(--theme-color-primary);
+    box-shadow: 0 30px 20px -20px var(--shadow-dark);
+}
+
+.signx-form-box form {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: stretch;
+    margin: var(--centering-margin);
+    text-align: center;
+}
+
+.signx-item {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+    display: flex;
+    flex: row wrap;
+    justify-content: center;
+}
+
+.signx-label {
+    display: none;
+    font-weight: bold;
+}
+
+.signx-icon {
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: fill;
+    padding-top: calc(var(--standard-padding) * 2);
+    padding-bottom: calc(var(--standard-padding) * 2);
+    padding-left: calc(var(--standard-padding) * 4);
+    padding-right: calc(var(--standard-padding) * 4);
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border: 0.01rem solid var(--theme-color-primary);
+    border-right: 0;
+}
+
+.signx-field input {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding-top: calc(var(--standard-padding) * 2);
+    padding-bottom: calc(var(--standard-padding) * 2);
+    padding-left: calc(var(--standard-padding) * 2);
+    padding-right: calc(var(--standard-padding) * 2);
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 0.01rem solid var(--theme-color-primary);
+}
+
+.signx-button {
+    padding: var(--standard-padding);
+    margin: var(--standard-margin);
+}

@@ -1,26 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="form-heading">
+<div class="signx-form-heading">
     <h2>{{ page_heading|title }}</h2>
 </div>
-<div class="form-box">
+<div class="signx-form-box">
     <form enctype="multipart/form-data" action="" method="POST">
         {% csrf_token %}
-        {{ form.username.label }}
-        {{ form.username }}
-        {{ form.first_name.label }}
-        {{ form.first_name }}
-        {{ form.last_name.label }}
-        {{ form.last_name }}
-        {{ form.email.label }}
-        {{ form.email }}
-        {{ form.password1.label }}
-        {{ form.password1 }}
-        {{ form.password2.label }}
-        {{ form.password2 }}
-        {{ form.as_p }}
-        <input type="submit" value="{{ button_value|capfirst }}">
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.username.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-id-badge"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.first_name.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.first_name }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.last_name.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.last_name }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.email.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-at"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.email }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.password1.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-key"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.password1 }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.password2.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-check-double"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.password2 }}
+            </div>
+        </div>
+        <input class="signx-button" type="submit" value="{{ button_value|capfirst }}">
     </form>
 </div>
 {% endblock %}
