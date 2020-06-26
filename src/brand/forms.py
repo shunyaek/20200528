@@ -9,55 +9,40 @@ class SignUpForm(UserCreationForm):
         label="Username",
         required=True,
         widget=forms.TextInput(
-            attrs={
-                "placeholder": "Username",
-                "class": "username-field",
-            }
-        )
+            attrs={"placeholder": "Username", "class": "username-field",}
+        ),
     )
 
     first_name = forms.CharField(
         label="First name",
         required=True,
         widget=forms.TextInput(
-            attrs={
-                "placeholder": "First name",
-                "class": "first_name-field",
-            }
-        )
+            attrs={"placeholder": "First name", "class": "first_name-field",}
+        ),
     )
 
     last_name = forms.CharField(
         label="Last name",
         required=True,
         widget=forms.TextInput(
-            attrs={
-                "placeholder": "Last name",
-                "class": "last_name-field",
-            }
-        )
+            attrs={"placeholder": "Last name", "class": "last_name-field",}
+        ),
     )
 
     email = forms.CharField(
         label="Email",
         required=True,
         widget=forms.EmailInput(
-            attrs={
-                "placeholder": "Email",
-                "class": "email-field",
-            }
-        )
+            attrs={"placeholder": "Email", "class": "email-field",}
+        ),
     )
 
     password1 = forms.CharField(
         label="Password1",
         required=True,
         widget=forms.PasswordInput(
-            attrs={
-                "placeholder": "Enter password",
-                "class": "password-field",
-            }
-        )
+            attrs={"placeholder": "Enter password", "class": "password-field",}
+        ),
     )
 
     password2 = forms.CharField(
@@ -68,7 +53,7 @@ class SignUpForm(UserCreationForm):
                 "placeholder": "Confirm password",
                 "class": "confirm_password-field",
             }
-        )
+        ),
     )
 
     field_order = [

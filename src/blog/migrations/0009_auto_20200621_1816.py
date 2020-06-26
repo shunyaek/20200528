@@ -7,14 +7,16 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0008_auto_20200621_1658'),
+        ("blog", "0008_auto_20200621_1658"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blogpost',
-            name='image',
-            field=models.ImageField(blank=True, default=django.utils.timezone.now, upload_to='posts/images/'),
+            model_name="blogpost",
+            name="image",
+            field=models.ImageField(
+                blank=True, default=django.utils.timezone.now, upload_to="posts/images/"
+            ),
             preserve_default=False,
         ),
     ]

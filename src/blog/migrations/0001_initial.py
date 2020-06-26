@@ -15,24 +15,51 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Author',
+            name="Author",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('profile_photo', models.ImageField(upload_to='')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("profile_photo", models.ImageField(upload_to="")),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=128)),
-                ('publication_date', models.DateTimeField(auto_now_add=True)),
-                ('content', models.TextField()),
-                ('summary', models.TextField()),
-                ('featured', models.BooleanField(default=False)),
-                ('thumbnail', models.ImageField(upload_to='')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.Author')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=128)),
+                ("publication_date", models.DateTimeField(auto_now_add=True)),
+                ("content", models.TextField()),
+                ("summary", models.TextField()),
+                ("featured", models.BooleanField(default=False)),
+                ("thumbnail", models.ImageField(upload_to="")),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="blog.Author"
+                    ),
+                ),
             ],
         ),
     ]

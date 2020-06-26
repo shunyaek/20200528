@@ -13,6 +13,6 @@ urlpatterns = [
     path("", blog_view, name="blog_home"),
     path("create/", create_post_view, name="create_post"),
     path("<int:pk>/", read_post_view, name="read_post"),
-    path('<int:pk>/update/', update_post_view, name='update_post'),
-    path('<int:pk>/delete/', delete_post_view, name='delete_post'),
+    path("<int:pk>/update/", update_post_view, name="update_post"),
+    path("<int:pk>/delete/", delete_post_view, name="delete_post"),
 ]

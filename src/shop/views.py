@@ -2,9 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Product
-from .forms import (
-    ProductForm,
-)
+from .forms import ProductForm
 
 
 def shop_view(request, *args, **kwargs):

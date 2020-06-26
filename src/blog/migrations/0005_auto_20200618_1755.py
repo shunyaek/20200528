@@ -6,15 +6,10 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0004_remove_post_summary'),
+        ("blog", "0004_remove_post_summary"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='post',
-            name='author',
-        ),
-        migrations.DeleteModel(
-            name='Author',
-        ),
+        migrations.RemoveField(model_name="post", name="author",),
+        migrations.DeleteModel(name="Author",),
     ]

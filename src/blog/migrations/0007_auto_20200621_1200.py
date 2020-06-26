@@ -6,33 +6,31 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0006_auto_20200618_1856'),
+        ("blog", "0006_auto_20200618_1856"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='content',
-            field=models.TextField(null=True),
+            model_name="post", name="content", field=models.TextField(null=True),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='featured',
+            model_name="post",
+            name="featured",
             field=models.BooleanField(default=False, null=True),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='image',
-            field=models.ImageField(blank=True, null=True, upload_to='posts/images/'),
+            model_name="post",
+            name="image",
+            field=models.ImageField(blank=True, null=True, upload_to="posts/images/"),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='publication_date',
+            model_name="post",
+            name="publication_date",
             field=models.DateTimeField(auto_now_add=True, null=True),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='title',
+            model_name="post",
+            name="title",
             field=models.CharField(max_length=128, null=True),
         ),
     ]

@@ -6,34 +6,58 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('brand', '0001_initial'),
+        ("brand", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='WidgetBanner',
+            name="WidgetBanner",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=32)),
-                ('sub_title', models.TextField(blank=True, max_length=128)),
-                ('background', models.ImageField(upload_to='')),
-                ('enabled', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=32)),
+                ("sub_title", models.TextField(blank=True, max_length=128)),
+                ("background", models.ImageField(upload_to="")),
+                ("enabled", models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
-            name='WidgetGrid',
+            name="WidgetGrid",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='WidgetInformational',
+            name="WidgetInformational",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('heading', models.CharField(max_length=32)),
-                ('content', models.TextField(blank=True, max_length=128)),
-                ('image', models.ImageField(upload_to='')),
-                ('enabled', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("heading", models.CharField(max_length=32)),
+                ("content", models.TextField(blank=True, max_length=128)),
+                ("image", models.ImageField(upload_to="")),
+                ("enabled", models.BooleanField(default=True)),
             ],
         ),
     ]

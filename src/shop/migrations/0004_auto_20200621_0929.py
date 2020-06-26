@@ -9,110 +9,150 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('shop', '0003_cart_orderitem'),
+        ("shop", "0003_cart_orderitem"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(blank=True, max_length=256, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(blank=True, max_length=256, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Customer',
+            name="Customer",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('order_date', models.DateTimeField(auto_now_add=True, null=True)),
-                ('customer', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='shop.Customer')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("order_date", models.DateTimeField(auto_now_add=True, null=True)),
+                (
+                    "customer",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="shop.Customer",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='ProductImage',
+            name="ProductImage",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("image", models.ImageField(blank=True, null=True, upload_to="")),
             ],
         ),
-        migrations.RemoveField(
-            model_name='orderitem',
-            name='item',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='availability_status',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='summary',
-        ),
+        migrations.RemoveField(model_name="orderitem", name="item",),
+        migrations.RemoveField(model_name="product", name="availability_status",),
+        migrations.RemoveField(model_name="product", name="summary",),
         migrations.AddField(
-            model_name='product',
-            name='availability',
+            model_name="product",
+            name="availability",
             field=models.BooleanField(default=True, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='description',
+            model_name="product",
+            name="description",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='discount',
+            model_name="product",
+            name="discount",
             field=models.IntegerField(blank=True, max_length=3, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='discount_availability',
+            model_name="product",
+            name="discount_availability",
             field=models.BooleanField(blank=True, default=False, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='featured',
+            model_name="product",
+            name="featured",
             field=models.BooleanField(default=False, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='price',
+            model_name="product",
+            name="price",
             field=models.DecimalField(decimal_places=2, max_digits=10, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='product_added_on',
+            model_name="product",
+            name="product_added_on",
             field=models.DateTimeField(auto_now_add=True, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='title',
+            model_name="product",
+            name="title",
             field=models.CharField(max_length=128, null=True),
         ),
-        migrations.DeleteModel(
-            name='Cart',
-        ),
-        migrations.DeleteModel(
-            name='OrderItem',
+        migrations.DeleteModel(name="Cart",),
+        migrations.DeleteModel(name="OrderItem",),
+        migrations.AddField(
+            model_name="order",
+            name="product",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="shop.Product",
+            ),
         ),
         migrations.AddField(
-            model_name='order',
-            name='product',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='shop.Product'),
+            model_name="product",
+            name="category",
+            field=models.ManyToManyField(to="shop.Category"),
         ),
         migrations.AddField(
-            model_name='product',
-            name='category',
-            field=models.ManyToManyField(to='shop.Category'),
-        ),
-        migrations.AddField(
-            model_name='product',
-            name='images',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='shop.ProductImage'),
+            model_name="product",
+            name="images",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="shop.ProductImage",
+            ),
         ),
     ]
