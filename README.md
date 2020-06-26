@@ -1,3 +1,5 @@
+![GitHub Super Linter](https://github.com/shunyaek/20200528/workflows/GitHub%20Super%20Linter/badge.svg)
+
 # 20200528
 
 To run this project, install the required packages in a Python virtual environment.
