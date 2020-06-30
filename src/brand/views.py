@@ -51,4 +51,4 @@ def sign_in_view(request, *args, **kwargs):
         "page_heading": "Sign-In",
         "button_value": "Sign-In",
     }
-    return render(request, "account/sign_up.html", context)
+    return render(request, "account/sign_in.html", context)

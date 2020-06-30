@@ -74,6 +74,8 @@
             </div>
         </div>
         <input class="signx-button" type="submit" value="{{ button_value|capfirst }}">
+        <p>Have an account? <a href="{% url 'brand:sign_in' %}">Sign-In</a>.</p>
+        <!-- <input class="signx-button-other" type="submit" value="Sign-In"> -->
     </form>
 </div>
 {% endblock %}

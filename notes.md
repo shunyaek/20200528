@@ -1,3 +1,7 @@
+# notes.md
+
+Contains some notes I took while developing this app. Might delete later.
+
 ## For username
 
 -   Required. 150 characters or fewer. Letters, digits and @/./+/-/\_ only.
@@ -12,3 +16,5 @@
 ## For password confirmation
 
 -   Enter the same password as before, for verification.
+
+harshit:helloworld

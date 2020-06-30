@@ -1,1 +1,37 @@
-<h1>Sign-In</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="signx-form-heading">
+    <h2>{{ page_heading|title }}</h2>
+</div>
+<div class="signx-form-box">
+    <form enctype="multipart/form-data" action="" method="POST">
+        {% csrf_token %}
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.username.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-id-badge"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="signx-item">
+            <div class="signx-label">
+                {{ form.password1.label }}
+            </div>
+            <div class="signx-icon">
+                <i class="fas fa-key"></i>
+            </div>
+            <div class="signx-field">
+                {{ form.password1 }}
+            </div>
+        </div>
+        <input class="signx-button" type="submit" value="{{ button_value|capfirst }}">
+        <p>Don't have an account? <a href="{% url 'brand:sign_up' %}">Sign-Up</a>.</p>
+        <!-- <input class="signx-button-other" type="submit" value="Sign-Up"> -->
+    </form>
+</div>
+{% endblock %}

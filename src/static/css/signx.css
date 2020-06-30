@@ -59,6 +59,7 @@
     border-top-left-radius: 0.5rem;
     border: 0.01rem solid var(--theme-color-primary);
     border-right: 0;
+    min-width: 2vw;
 }
 
 .signx-field input {
@@ -75,6 +76,32 @@
 }
 
 .signx-button {
-    padding: var(--standard-padding);
-    margin: var(--standard-margin);
+    margin-top: calc(var(--standard-margin) / 2);
+    margin-left: calc(var(--standard-margin) * 4);
+    margin-right: calc(var(--standard-margin) * 4);
+    background-color: var(--theme-color-secondary);
+    color: var(--theme-color-background);
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--theme-color-secondary);
+    box-shadow: 0 4px 14px 0 var(--shadow-secondary);
+    padding-left: calc(var(--standard-padding) * 3);
+    padding-right: calc(var(--standard-padding) * 3);
+    padding-top: var(--standard-padding);
+    padding-bottom: var(--standard-padding);
+    font-size: clamp(100%, 1rem + 2vw, 1.5rem);
+}
+
+.signx-button-other {
+    margin-left: calc(var(--standard-margin) * 4);
+    margin-right: calc(var(--standard-margin) * 4);
+    background-color: var(--theme-color-background);
+    color: var(--theme-color-primary);
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--theme-color-secondary);
+    box-shadow: 0 4px 14px 0 var(--shadow-secondary);
+    padding-left: calc(var(--standard-padding) * 3);
+    padding-right: calc(var(--standard-padding) * 3);
+    padding-top: var(--standard-padding);
+    padding-bottom: var(--standard-padding);
+    font-size: clamp(100%, 1rem + 2vw, 1.5rem);
 }
