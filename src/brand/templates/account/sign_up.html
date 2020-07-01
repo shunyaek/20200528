@@ -7,6 +7,13 @@
 <div class="signx-form-box">
     <form enctype="multipart/form-data" action="" method="POST">
         {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.username.errors }}
+        {{ form.first_name.errors }}
+        {{ form.last_name.errors }}
+        {{ form.email.errors }}
+        {{ form.password1.errors }}
+        {{ form.password2.errors }}
         <div class="signx-item">
             <div class="signx-label">
                 {{ form.username.label }}

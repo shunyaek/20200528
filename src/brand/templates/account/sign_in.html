@@ -7,26 +7,29 @@
 <div class="signx-form-box">
     <form enctype="multipart/form-data" action="" method="POST">
         {% csrf_token %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
         <div class="signx-item">
             <div class="signx-label">
-                {{ form.username.label }}
+                Username
             </div>
             <div class="signx-icon">
                 <i class="fas fa-id-badge"></i>
             </div>
             <div class="signx-field">
-                {{ form.username }}
+                <input type="text" name="username" placeholder="Username">
             </div>
         </div>
         <div class="signx-item">
             <div class="signx-label">
-                {{ form.password1.label }}
+                Password
             </div>
             <div class="signx-icon">
                 <i class="fas fa-key"></i>
             </div>
             <div class="signx-field">
-                {{ form.password1 }}
+                <input type="password" name="password" placeholder="Password">
             </div>
         </div>
         <input class="signx-button" type="submit" value="{{ button_value|capfirst }}">

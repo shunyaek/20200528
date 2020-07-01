@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 from .forms import SearchForm, SignUpForm
 from blog.models import BlogPost
@@ -35,6 +37,10 @@ def sign_up_view(request, *args, **kwargs):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get("username")
+            messages.success(
+                request, "Welcome, %s! You have successfully registered!" % user
+            )
             return redirect("brand:sign_in")
     context = {
         "form": form,
@@ -45,10 +51,25 @@ def sign_up_view(request, *args, **kwargs):
 
 
 def sign_in_view(request, *args, **kwargs):
-    form = UserCreationForm()
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("home")
+        else:
+            messages.info(request, "Username or password incorrect!")
+
     context = {
-        "form": form,
         "page_heading": "Sign-In",
         "button_value": "Sign-In",
     }
+
     return render(request, "account/sign_in.html", context)
+
+
+def sign_out_view(request, *args, **kwargs):
+    pass

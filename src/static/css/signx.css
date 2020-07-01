@@ -75,6 +75,13 @@
     border: 0.01rem solid var(--theme-color-primary);
 }
 
+.errorlist {
+    padding: var(--standard-padding);
+    margin: var(--centering-margin);
+    list-style: none;
+    text-align: center;
+}
+
 .signx-button {
     margin-top: calc(var(--standard-margin) / 2);
     margin-left: calc(var(--standard-margin) * 4);
