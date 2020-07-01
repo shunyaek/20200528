@@ -162,6 +162,18 @@ header {
     display: block;
 }
 
+.user-options {
+    display: flex;
+}
+
+.user-options a {
+    text-decoration: none;
+}
+
+.user-options a:hover {
+    text-decoration: none;
+}
+
 @media screen and (min-width: 900px) {
     .nav {
         display: flex;
@@ -176,6 +188,10 @@ header {
     }
 
     .nav-toggle {
+        display: none;
+    }
+
+    .user-options {
         display: none;
     }
 
