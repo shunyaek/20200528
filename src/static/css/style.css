@@ -5,6 +5,7 @@
 @import url("./post.css");
 @import url("./forms.css");
 @import url("./signx.css");
+@import url("./product.css");
 
 html {
     font-size: var(--base-font-size);

@@ -1,0 +1,27 @@
+@import url("./root.css");
+
+.product-showcase {
+    margin: var(--standard-margin);
+    padding: var(--standard-padding);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2vmin;
+    gap: 2vmin;
+}
+
+.product-gallery,
+.product-info {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.product-gallery img {
+    padding: var(--standard-padding);
+    border: 0.2rem solid var(--placeholder-border);
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}

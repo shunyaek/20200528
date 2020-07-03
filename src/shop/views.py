@@ -14,6 +14,11 @@ def shop_view(request, *args, **kwargs):
     return render(request, "shop.html", context)
 
 
+def product_view(request, *args, **kwargs):
+    context = {}
+    return render(request, "product.html", context)
+
+
 def create_product_view(request, *args, **kwargs):
     create_product_form = ProductForm(request.POST or None)
     if create_product_form.is_valid():
