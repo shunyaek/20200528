@@ -1,49 +1,105 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <section class="product-section">
-    <div class="product-showcase">
-        <div class="product-gallery">
-            <img src="https://source.unsplash.com/1920x1080/">
-            <img src="https://source.unsplash.com/1920x1080/">
-            <img src="https://source.unsplash.com/1920x1080/">
-            <img src="https://source.unsplash.com/1920x1080/">
-            <img src="https://source.unsplash.com/1920x1080/">
+    <div class="product-header">
+        <div class="product-header-buffer">
         </div>
-        <div class="product-info">
+        <div class="product-header-content">
             <h2>Desktop + Mobile Pack</h2>
-            <div>
-                <p>$7.99</p>
+            <div class="options-box">
+                <div class="price-box">$7.99</div>
+                <div class="purchase-button">Purchase</div>
+                <div class="faqs-button">FAQs</div>
             </div>
-            <div>
-                <p>
-                    Art party kickstarter viral street art selfies vexillologist VHS pop-up tote bag intelligentsia bespoke
-                    quinoa. Schlitz hoodie pok pok lo-fi vape lyft plaid salvia. Farm-to-table cronut aesthetic, 8-bit
-                    sustainable succulents next level VHS PBR&B lo-fi. Everyday carry kale chips taiyaki cloud bread pop-up
-                    chicharrones tilde humblebrag 3 wolf moon truffaut. Try-hard DIY drinking vinegar scenester narwhal
-                    paleo selfies tattooed occupy meggings four loko helvetica freegan pug. Tousled messenger bag la croix,
-                    microdosing cred hammock sriracha kickstarter. Tousled live-edge brooklyn ethical, four loko keytar
-                    selfies plaid raw denim hammock taiyaki squid.
-                </p>
-                <p>
-                    Dreamcatcher truffaut normcore, taxidermy coloring book readymade try-hard tbh kale chips. Sustainable
-                    single-origin coffee vape kitsch PBR&B echo park. Slow-carb glossier kitsch, pour-over hella tilde
-                    bitters VHS cray. Pickled iPhone swag, vexillologist activated charcoal unicorn kogi. Disrupt
-                    lumbersexual actually, normcore crucifix offal bitters helvetica glossier salvia 8-bit taxidermy beard
-                    pour-over semiotics.
-                </p>
-                <p>
-                    Slow-carb lumbersexual pabst tousled kogi, vinyl bushwick blog selfies. Distillery farm-to-table retro
-                    gastropub, bicycle rights chicharrones listicle lo-fi man braid DIY woke affogato tacos. Gentrify
-                    mumblecore YOLO quinoa drinking vinegar occupy. Deep v prism edison bulb austin.
-                </p>
-                <p>
-                    Listicle raw denim pork belly small batch. Meditation seitan yr copper mug, slow-carb shaman la croix
-                    tacos 3 wolf moon vaporware. Vice leggings try-hard chicharrones poutine. Green juice flannel af hammock
-                    etsy. Butcher adaptogen heirloom man bun occupy knausgaard palo santo fixie gochujang tilde narwhal
-                    vinyl shabby chic sustainable jianbing.
-                </p>
+        </div>
+    </div>
+    <div class="product-showcase">
+        <link rel="stylesheet" href="{% static 'fotorama/fotorama.css' %}">
+        <div class="product-gallery">
+            <div class="fotorama" data-fit="cover" data-transition="dissolve" data-nav="false"
+                data-allowfullscreen="true">
+                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167064502-5E5203V4IM9THNS3916B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167042522-MN15DMTHBPVBG690KIMZ/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
             </div>
+            <div class="fotorama" data-fit="cover" data-transition="dissolve" data-nav="false"
+                data-allowfullscreen="true">
+                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600694826-K0CPS9IZMTYN2PYJWAVY/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+            </div>
+            <hr>
+        </div>
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'fotorama/fotorama.js' %}"></script>
+        <div class="product-info">
+            <p>
+                Art party kickstarter viral street art selfies vexillologist VHS pop-up tote bag intelligentsia
+                bespoke
+                quinoa. Schlitz hoodie pok pok lo-fi vape lyft plaid salvia. Farm-to-table cronut aesthetic, 8-bit
+                sustainable succulents next level VHS PBR&B lo-fi. Everyday carry kale chips taiyaki cloud bread
+                pop-up
+                chicharrones tilde humblebrag 3 wolf moon truffaut. Try-hard DIY drinking vinegar scenester narwhal
+                paleo selfies tattooed occupy meggings four loko helvetica freegan pug. Tousled messenger bag la
+                croix,
+                microdosing cred hammock sriracha kickstarter. Tousled live-edge brooklyn ethical, four loko keytar
+                selfies plaid raw denim hammock taiyaki squid.
+            </p>
+            <p>
+                Dreamcatcher truffaut normcore, taxidermy coloring book readymade try-hard tbh kale chips.
+                Sustainable
+                single-origin coffee vape kitsch PBR&B echo park. Slow-carb glossier kitsch, pour-over hella tilde
+                bitters VHS cray. Pickled iPhone swag, vexillologist activated charcoal unicorn kogi. Disrupt
+                lumbersexual actually, normcore crucifix offal bitters helvetica glossier salvia 8-bit taxidermy
+                beard
+                pour-over semiotics.
+            </p>
+            <div class="options-box">
+                <div class="price-box">$7.99</div>
+                <div class="purchase-button">Purchase</div>
+                <div class="faqs-button">FAQs</div>
+            </div>
+            <h2>FAQs</h2>
+            <h3>What is a preset?</h3>
+            <p class="faqans">
+                A preset is a template containing manual edits that have been previously made in
+                Lightroom. They turn your original image into the same style you see on Cara Jourdan’s Instagram.
+            </p>
+            <h3>What is the difference between the mobile presets and the desktop presets?</h3>
+            <p class="faqans">The Lightroom Desktop Presets are meant to be used on a computer or laptop using RAW
+                photos, whereas the mobile presets are designed to be used on your mobile device only. We recommend the
+                mobile preset pack for those who mostly edit on their phones as the mobile pack does not work on
+                computers. If you are looking for presets to use with your Adobe Lightroom Classic CC subscription, we
+                recommend purchasing the Lightroom Presets for Desktop.
+            </p>
+            <h3>What do I need in order to use the presets?</h3>
+            <p class="faqans">
+                You will need the Adobe Lightroom Classic CC installed on your desktop or laptop computer.
+            </p>
+            <h3>Do these presets work on every photo?</h3>
+            <p class="faqans">
+                These presets process your photos beautifully when applied and are easy to use. Every
+                photo, however, is different, so these presets will vary on each photo depending on the lighting, camera
+                gear, composition, etc. There are so many factors that determine how a preset will look on each photo,
+                so we encourage you to make them your own by playing around with different adjustments. You can start by
+                adding our one-click adjustments included with the presets, and go from there. Minor adjustments can
+                make a huge difference!
+            </p>
+            <h3>What will I receive with my purchase? </h3>
+            <p class="faqans">
+                You will receive three preset files: City, Nature, and Ocean, as well as the four bonus
+                adjustments for your presets: Brighten, Colour Pop, Grain, and Sunkissed. The presets and bonus
+                adjustments will all work for your desktop Lightroom Program. You will also receive a PDF Guide with
+                installation instructions.
+            </p>
+            <h3>What happens after I purchase the presets? </h3>
+            <p class="faqans">
+                Once purchased, you will automatically receive an order confirmation email, followed by an
+                email containing a link to the file. This link will expire 24 hours after it's first clicked, so make
+                sure you get it downloaded! If you do no receive an email, make sure you entered the correct email
+                address and check your junk folder. If you’re having troubles downloading from the link provided, try
+                using another internet browser.
+            </p>
         </div>
     </div>
 </section>
