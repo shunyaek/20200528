@@ -12,7 +12,7 @@
     --theme-color-primary: rgba(33, 33, 33, 1);
     --theme-color-secondary: rgba(199, 165, 0, 1);
     --placeholder-border: 0.01rem solid rgba(33, 33, 33, 0);
-    --shadow-dark: rgba(33, 33, 33, 0.3);
+    --shadow-dark: rgba(33, 33, 33, 0.1);
     --shadow-secondary: rgba(199, 165, 0, 0.3);
     --centering-margin: 0 auto;
     --standard-margin: 4vmin;
@@ -22,3 +22,8 @@
 /* * {
     border: 1px solid black;
 } */
+
+i {
+    padding-left: calc(var(--standard-padding) * 2);
+    padding-right: calc(var(--standard-padding) * 2);
+}

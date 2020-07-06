@@ -1,5 +1,9 @@
 @import url("./root.css");
 
+.product-section {
+    padding: var(--standard-padding);
+}
+
 .product-header {
     margin-left: var(--standard-margin);
     margin-right: var(--standard-margin);
@@ -16,20 +20,21 @@
 }
 
 .options-box {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0vmin;
-    gap: 0vmin;
+    display: flex;
+    flex: row wrap;
+    justify-content: flex-start;
 }
 
 .price-box {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: fill;
     background-color: var(--theme-color-background);
     color: var(--theme-color-primary);
     border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    border-left: 0.01rem solid var(--theme-color-secondary);
-    border-top: 0.01rem solid var(--theme-color-secondary);
-    border-bottom: 0.01rem solid var(--theme-color-secondary);
+    border: 0.01rem solid var(--theme-color-secondary);
+    border-right: 0;
     padding-left: calc(var(--standard-padding) * 3);
     padding-right: calc(var(--standard-padding) * 3);
     padding-top: var(--standard-padding);
@@ -39,13 +44,14 @@
 }
 
 .purchase-button {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
     background-color: var(--theme-color-secondary);
     color: var(--theme-color-background);
     border-bottom-right-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    border-top: 0.01rem solid var(--theme-color-secondary);
-    border-right: 0.01rem solid var(--theme-color-secondary);
-    border-bottom: 0.01rem solid var(--theme-color-secondary);
+    border: 0.01rem solid var(--theme-color-secondary);
     box-shadow: 0 4px 14px 0 var(--shadow-secondary);
     padding-left: calc(var(--standard-padding) * 3);
     padding-right: calc(var(--standard-padding) * 3);
@@ -55,17 +61,19 @@
     text-align: center;
 }
 
-.faqs-button {
-    background-color: var(--theme-color-background);
-    color: var(--theme-color-primary);
-    border-radius: 0.5rem;
-    border: 0.01rem solid var(--theme-color-secondary);
+.faqs-link {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: fill;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: dotted;
     padding-left: calc(var(--standard-padding) * 3);
     padding-right: calc(var(--standard-padding) * 3);
     padding-top: var(--standard-padding);
     padding-bottom: var(--standard-padding);
-    font-size: clamp(100%, 1rem + 2vw, 1.5rem);
-    text-align: center;
+    background-color: var(--theme-color-background);
+    color: var(--theme-color-primary);
 }
 
 .product-showcase {
@@ -78,31 +86,6 @@
     grid-gap: 2vmin;
     gap: 2vmin;
 }
-
-.swiper-container {
-    width: 600px;
-    height: 300px;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
 
 .product-gallery {
     margin-top: 0;
@@ -143,4 +126,41 @@
 
 [data-component="slideshow"] .slide.active {
     display: block;
+}
+
+.faqs-box {
+    margin: var(--standard-margin);
+    margin-top: calc(var(--standard-margin) * 2);
+    margin-bottom: calc(var(--standard-margin) * 2);
+}
+
+.faqs {
+    margin: var(--centering-margin);
+    padding: var(--standard-padding);
+    max-width: 60%;
+    background-color: var(--theme-color-background);
+    border-radius: 0.5rem;
+    border: 0.01rem solid var(--theme-color-primary);
+    /* box-shadow: 0 30px 20px -20px var(--shadow-dark); */
+    box-shadow: 0 30px 20px -20px var(--shadow-dark),
+                0 -30px 20px -20px var(--shadow-dark),
+                30px 0 20px -20px var(--shadow-dark),
+                -30px 0 20px -20px var(--shadow-dark);
+}
+
+.faqs h2 {
+    padding-left: calc(var(--standard-padding) * 4);
+    padding-right: calc(var(--standard-padding) * 4);
+}
+
+.faqs-grid {
+    display: flexbox;
+    flex-flow: row wrap;
+}
+
+.faqs-grid div {
+    flex: 1;
+    flex-shrink: 1;
+    padding-left: calc(var(--standard-padding) * 4);
+    padding-right: calc(var(--standard-padding) * 4);
 }
