@@ -11,24 +11,89 @@
             <div class="options-box">
                 <div class="price-box">$7.99</div>
                 <div class="purchase-button">Purchase</div>
-                <div class="faqs-button">FAQs</div>
+                <div class="faqs-button"><a href="#faqs">FAQs</a></div>
             </div>
         </div>
     </div>
     <div class="product-showcase">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <link rel="stylesheet" href="{% static 'fotorama/fotorama.css' %}">
         <div class="product-gallery">
-            <div class="fotorama" data-fit="cover" data-transition="dissolve" data-nav="false"
-                data-allowfullscreen="true">
-                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167064502-5E5203V4IM9THNS3916B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167042522-MN15DMTHBPVBG690KIMZ/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
+                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
+                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600694826-K0CPS9IZMTYN2PYJWAVY/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
+                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
+                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
+                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
+                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167064502-5E5203V4IM9THNS3916B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167042522-MN15DMTHBPVBG690KIMZ/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="fotorama" data-fit="cover" data-transition="dissolve" data-nav="false"
+            <script>
+                var mySwiper = new Swiper('.swiper-container', {
+                    loop: true,
+                    effect: 'fade',
+
+                    fadeEffect: {
+                        crossFade: true
+                    },
+
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
+                })
+            </script>
+            <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover" data-transition="dissolve"
+                data-arrows="false" data-click="true" data-swipe="true" data-trackpad="true" data-nav="false"
                 data-allowfullscreen="true">
-                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600694826-K0CPS9IZMTYN2PYJWAVY/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                <img src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img
+                    src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167064502-5E5203V4IM9THNS3916B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img
+                    src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167042522-MN15DMTHBPVBG690KIMZ/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img
+                    src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600694826-K0CPS9IZMTYN2PYJWAVY/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
+                <img
+                    src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
             </div>
-            <hr>
+            <p>Tap on the images to view original images and images with the filter applied.</p>
         </div>
         <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'fotorama/fotorama.js' %}"></script>
@@ -57,50 +122,52 @@
             <div class="options-box">
                 <div class="price-box">$7.99</div>
                 <div class="purchase-button">Purchase</div>
-                <div class="faqs-button">FAQs</div>
+                <div class="faqs-button"><a href="#faqs">FAQs</a></div>
             </div>
-            <h2>FAQs</h2>
-            <h3>What is a preset?</h3>
-            <p class="faqans">
-                A preset is a template containing manual edits that have been previously made in
-                Lightroom. They turn your original image into the same style you see on Cara Jourdan’s Instagram.
-            </p>
-            <h3>What is the difference between the mobile presets and the desktop presets?</h3>
-            <p class="faqans">The Lightroom Desktop Presets are meant to be used on a computer or laptop using RAW
-                photos, whereas the mobile presets are designed to be used on your mobile device only. We recommend the
-                mobile preset pack for those who mostly edit on their phones as the mobile pack does not work on
-                computers. If you are looking for presets to use with your Adobe Lightroom Classic CC subscription, we
-                recommend purchasing the Lightroom Presets for Desktop.
-            </p>
-            <h3>What do I need in order to use the presets?</h3>
-            <p class="faqans">
-                You will need the Adobe Lightroom Classic CC installed on your desktop or laptop computer.
-            </p>
-            <h3>Do these presets work on every photo?</h3>
-            <p class="faqans">
-                These presets process your photos beautifully when applied and are easy to use. Every
-                photo, however, is different, so these presets will vary on each photo depending on the lighting, camera
-                gear, composition, etc. There are so many factors that determine how a preset will look on each photo,
-                so we encourage you to make them your own by playing around with different adjustments. You can start by
-                adding our one-click adjustments included with the presets, and go from there. Minor adjustments can
-                make a huge difference!
-            </p>
-            <h3>What will I receive with my purchase? </h3>
-            <p class="faqans">
-                You will receive three preset files: City, Nature, and Ocean, as well as the four bonus
-                adjustments for your presets: Brighten, Colour Pop, Grain, and Sunkissed. The presets and bonus
-                adjustments will all work for your desktop Lightroom Program. You will also receive a PDF Guide with
-                installation instructions.
-            </p>
-            <h3>What happens after I purchase the presets? </h3>
-            <p class="faqans">
-                Once purchased, you will automatically receive an order confirmation email, followed by an
-                email containing a link to the file. This link will expire 24 hours after it's first clicked, so make
-                sure you get it downloaded! If you do no receive an email, make sure you entered the correct email
-                address and check your junk folder. If you’re having troubles downloading from the link provided, try
-                using another internet browser.
-            </p>
         </div>
+    </div>
+    <div id="faqs" class="faqs">
+        <h2>FAQs</h2>
+        <h3>What is a preset?</h3>
+        <p class="faqans">
+            A preset is a template containing manual edits that have been previously made in
+            Lightroom. They turn your original image into the same style you see on Cara Jourdan’s Instagram.
+        </p>
+        <h3>What is the difference between the mobile presets and the desktop presets?</h3>
+        <p class="faqans">The Lightroom Desktop Presets are meant to be used on a computer or laptop using RAW
+            photos, whereas the mobile presets are designed to be used on your mobile device only. We recommend the
+            mobile preset pack for those who mostly edit on their phones as the mobile pack does not work on
+            computers. If you are looking for presets to use with your Adobe Lightroom Classic CC subscription, we
+            recommend purchasing the Lightroom Presets for Desktop.
+        </p>
+        <h3>What do I need in order to use the presets?</h3>
+        <p class="faqans">
+            You will need the Adobe Lightroom Classic CC installed on your desktop or laptop computer.
+        </p>
+        <h3>Do these presets work on every photo?</h3>
+        <p class="faqans">
+            These presets process your photos beautifully when applied and are easy to use. Every
+            photo, however, is different, so these presets will vary on each photo depending on the lighting, camera
+            gear, composition, etc. There are so many factors that determine how a preset will look on each photo,
+            so we encourage you to make them your own by playing around with different adjustments. You can start by
+            adding our one-click adjustments included with the presets, and go from there. Minor adjustments can
+            make a huge difference!
+        </p>
+        <h3>What will I receive with my purchase? </h3>
+        <p class="faqans">
+            You will receive three preset files: City, Nature, and Ocean, as well as the four bonus
+            adjustments for your presets: Brighten, Colour Pop, Grain, and Sunkissed. The presets and bonus
+            adjustments will all work for your desktop Lightroom Program. You will also receive a PDF Guide with
+            installation instructions.
+        </p>
+        <h3>What happens after I purchase the presets? </h3>
+        <p class="faqans">
+            Once purchased, you will automatically receive an order confirmation email, followed by an
+            email containing a link to the file. This link will expire 24 hours after it's first clicked, so make
+            sure you get it downloaded! If you do no receive an email, make sure you entered the correct email
+            address and check your junk folder. If you’re having troubles downloading from the link provided, try
+            using another internet browser.
+        </p>
     </div>
 </section>
 {% endblock %}
