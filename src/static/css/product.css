@@ -17,16 +17,19 @@
 
 .options-box {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1vmin;
-    gap: 1vmin;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0vmin;
+    gap: 0vmin;
 }
 
 .price-box {
     background-color: var(--theme-color-background);
     color: var(--theme-color-primary);
-    border-radius: 0.5rem;
-    border: 0.01rem solid var(--theme-color-secondary);
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-left: 0.01rem solid var(--theme-color-secondary);
+    border-top: 0.01rem solid var(--theme-color-secondary);
+    border-bottom: 0.01rem solid var(--theme-color-secondary);
     padding-left: calc(var(--standard-padding) * 3);
     padding-right: calc(var(--standard-padding) * 3);
     padding-top: var(--standard-padding);
@@ -38,8 +41,11 @@
 .purchase-button {
     background-color: var(--theme-color-secondary);
     color: var(--theme-color-background);
-    border-radius: 0.5rem;
-    border: 0.01rem solid var(--theme-color-secondary);
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-top: 0.01rem solid var(--theme-color-secondary);
+    border-right: 0.01rem solid var(--theme-color-secondary);
+    border-bottom: 0.01rem solid var(--theme-color-secondary);
     box-shadow: 0 4px 14px 0 var(--shadow-secondary);
     padding-left: calc(var(--standard-padding) * 3);
     padding-right: calc(var(--standard-padding) * 3);

@@ -9,78 +9,15 @@
         <div class="product-header-content">
             <h2>Desktop + Mobile Pack</h2>
             <div class="options-box">
-                <div class="price-box">$7.99</div>
-                <div class="purchase-button">Purchase</div>
-                <div class="faqs-button"><a href="#faqs">FAQs</a></div>
+                <div class="price-box"><i class="fas fa-dollar-sign"></i> 7.99</div>
+                <button type="button" class="purchase-button"><i class="fas fa-credit-card"></i> Purchase</button>
+                <button type="button" class="faqs-button"><i class="fas fa-question-circle"></i> FAQs</button>
             </div>
         </div>
     </div>
     <div class="product-showcase">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <link rel="stylesheet" href="{% static 'fotorama/fotorama.css' %}">
         <div class="product-gallery">
-            <!-- Slider main container -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
-                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
-                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600694826-K0CPS9IZMTYN2PYJWAVY/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
-                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
-                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497600660019-ISIR89MHE5GC1A947X5B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover"
-                            data-transition="dissolve" data-arrows="false" data-click="true" data-swipe="true"
-                            data-trackpad="true" data-nav="false" data-allowfullscreen="true">
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167064502-5E5203V4IM9THNS3916B/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/5373b147e4b0e5824b359a50/1497167042522-MN15DMTHBPVBG690KIMZ/ke17ZwdGBToddI8pDm48kGXuwhHa7x8Jn1cmn2xeUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIeX4uU_ElXq2yJfDTRwNR32wzBeyDl5KNsu--KqOTN60KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=1500w">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-            <script>
-                var mySwiper = new Swiper('.swiper-container', {
-                    loop: true,
-                    effect: 'fade',
-
-                    fadeEffect: {
-                        crossFade: true
-                    },
-
-                    // If we need pagination
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-
-                    // Navigation arrows
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    }
-                })
-            </script>
             <div class="fotorama" data-autoplay="false" data-loop="true" data-fit="cover" data-transition="dissolve"
                 data-arrows="false" data-click="true" data-swipe="true" data-trackpad="true" data-nav="false"
                 data-allowfullscreen="true">
