@@ -5,6 +5,7 @@
 @import url("./post.css");
 @import url("./forms.css");
 @import url("./signx.css");
+@import url('./shop.css');
 @import url("./product.css");
 
 html {
@@ -24,52 +25,6 @@ main {
     flex-grow: 1;
     margin: var(--centering-margin);
     font-family: var(--other-font);
-}
-
-.shopping-grid {
-    font-family: var(--other-font);
-    margin: var(--standard-margin);
-    padding: calc(var(--standard-padding) * 6);
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-gap: 4vmin;
-    gap: 4vmin;
-}
-
-.card {
-    background-color: var(--white);
-    border: 0.01rem solid var(--theme-color-primary);
-    border-radius: 0.5rem;
-    transition: 0.5s;
-}
-
-.card:hover {
-    box-shadow: 0 30px 20px -20px var(--shadow-dark);
-}
-
-.card img {
-    border: 0.2rem solid var(--placeholder-border);
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-}
-
-.card h2,
-.card h4,
-.card p {
-    margin: var(--standard-margin);
-    padding: var(--standard-padding);
-    text-align: center;
-}
-
-.card h2 {
-    font-weight: 500;
-}
-
-.card p {
-    font-size: clamp(80%, 0.5rem + 2vw, 0.5rem);
 }
 
 .picture-text {
@@ -298,15 +253,5 @@ main {
         font-size: clamp(60%, 1rem + 2vw, 1.5rem);
         padding: var(--standard-padding);
         margin: var(--standard-margin);
-    }
-
-    .shopping-grid {
-        font-family: var(--other-font);
-        margin: var(--standard-margin);
-        padding: calc(var(--standard-padding) * 6);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 4vmin;
-        gap: 4vmin;
     }
 }
