@@ -39,6 +39,7 @@ main {
 .picture-text div {
     padding: 0rem;
     margin: 0rem;
+    direction: ltr;
 }
 
 .picture-text img {
@@ -49,18 +50,21 @@ main {
     vertical-align: middle;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    direction: ltr;
 }
 
 .picture-text p,
 .picture-text h2 {
     padding: var(--standard-padding);
     margin: calc(var(--standard-margin) / 4);
+    direction: ltr;
 }
 
 .picture-text form {
     text-align: center;
     display: flex;
     flex-flow: column wrap;
+    direction: ltr;
 }
 
 .picture-text form input {
@@ -73,6 +77,7 @@ main {
     box-sizing: border-box;
     box-shadow: 0 4px 14px 0 var(--shadow-secondary);
     font-size: clamp(80%, 0.5rem + 2vw, 0.75rem);
+    direction: ltr;
 }
 
 .picture-text form input:focus {
@@ -85,11 +90,13 @@ main {
     box-sizing: border-box;
     box-shadow: 0 4px 14px 0 var(--shadow-secondary);
     font-size: clamp(80%, 0.5rem + 2vw, 0.75rem);
+    direction: ltr;
 }
 
 .picture-text form button {
     flex: 1;
     margin: calc(var(--standard-margin) / 4);
+    direction: ltr;
 }
 
 .picture-grid {
@@ -209,6 +216,7 @@ main {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2vmin;
         gap: 2vmin;
+        direction: ltr;
     }
 
     .picture-text div {

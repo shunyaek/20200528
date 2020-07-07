@@ -5,9 +5,14 @@
     {% for product in products_list %}
     <article class="card">
         <img src="https://source.unsplash.com/sqaure">
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.summary }}</p>
-        <h4>${{ product.price }}</h4>
+        <div class="card-header">
+            <h2 class="card-title">{{ product.title }}</h2>
+            <div class="options-box">
+                <div class="price-box"><i class="fas fa-dollar-sign"></i>{{ product.price }}</div>
+                <button type="button" class="purchase-button"><i class="fas fa-credit-card"></i>Purchase</button>
+            </div>
+        </div>
+        <p class="card-description">{{ product.description|truncatewords:20 }}</p>
     </article>
     {% endfor %}
 </section>

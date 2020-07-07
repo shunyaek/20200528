@@ -1,7 +1,6 @@
 @import url("./root.css");
 
 header {
-    margin: var(--centering-margin);
     padding: 0rem;
     text-align: center;
 }
@@ -43,6 +42,7 @@ header {
 }
 
 .branding {
+    display: none;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: var(--standard-padding);
@@ -89,26 +89,16 @@ header {
     font-size: clamp(100%, 1rem + 2vw, 1.5rem);
 }
 
-.menu {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: var(--standard-margin);
-    margin-bottom: var(--standard-margin);
-    padding-bottom: var(--standard-padding);
-    padding-top: var(--standard-padding);
-    align-items: center;
-    text-align: center;
-    font-family: var(--navbar-font);
-}
-
 .nav {
     display: none;
     justify-content: space-evenly;
     margin-top: 0;
     padding-top: var(--standard-padding);
     padding-bottom: var(--standard-padding);
-    align-items: center;
-    text-align: center;
+    padding-left: calc(var(--standard-padding) * 16);
+    padding-right: calc(var(--standard-padding) * 16);
+    align-items: flex-start;
+    text-align: start;
     font-family: var(--navbar-font);
 }
 
@@ -118,7 +108,7 @@ header {
     padding-right: calc(var(--standard-padding) * 4);
     padding-top: var(--standard-padding);
     padding-bottom: var(--standard-padding);
-    text-align: center;
+    text-align: start;
     color: var(--theme-color-primary);
     text-decoration: none;
 }
@@ -129,7 +119,7 @@ header {
     padding-right: calc(var(--standard-padding) * 4);
     padding-top: var(--standard-padding);
     padding-bottom: var(--standard-padding);
-    text-align: center;
+    text-align: start;
     color: var(--theme-color-primary);
     text-decoration: overline;
     text-decoration-color: var(--theme-color-secondary);
@@ -142,7 +132,7 @@ header {
     padding-right: calc(var(--standard-padding) * 4);
     padding-top: var(--standard-padding);
     padding-bottom: var(--standard-padding);
-    text-align: center;
+    text-align: start;
     color: var(--theme-color-background);
     background-color: var(--theme-color-primary);
     border: 0.2rem solid var(--theme-color-primary);
@@ -150,9 +140,41 @@ header {
     text-decoration: none;
 }
 
-.nav-toggle {
+.menu {
     display: flex;
-    position: absolute;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-top: calc(var(--standard-margin) / 2);
+    margin-bottom: calc(var(--standard-margin) / 2);
+    padding-bottom: calc(var(--standard-padding) / 2);
+    padding-top: calc(var(--standard-padding) / 2);
+    align-items: center;
+    text-align: center;
+    font-family: var(--navbar-font);
+}
+
+.menu-branding {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: fill;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: calc(var(--standard-padding) * 4);
+    padding-right: calc(var(--standard-padding) * 4);
+    text-align: center;
+    font-family: var(--brand-font);
+    background-color: var(--theme-color-background);
+    color: var(--theme-color-primary);
+    font-size: clamp(100%, 3rem + 2vw, 3rem);
+    text-align: center;
+}
+
+.nav-toggle {
+    padding-left: calc(var(--standard-padding) * 2);
+    padding-right: calc(var(--standard-padding) * 2);
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: fill;
     cursor: pointer;
     color: var(--theme-color-primary);
     font-size: clamp(100%, 1rem + 2vw, 1.5rem);
@@ -164,6 +186,8 @@ header {
 
 .user-options {
     display: flex;
+    padding-left: calc(var(--standard-padding) * 16);
+    padding-right: calc(var(--standard-padding) * 16);
 }
 
 .user-options a {
@@ -175,6 +199,25 @@ header {
 }
 
 @media screen and (min-width: 900px) {
+    header {
+        margin: var(--centering-margin);
+        padding: 0rem;
+        text-align: center;
+    }
+
+    .branding {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: var(--standard-padding);
+        padding-right: var(--standard-padding);
+        text-align: center;
+        font-family: var(--brand-font);
+        background-color: var(--theme-color-background);
+        color: var(--theme-color-primary);
+        font-size: clamp(100%, 3rem + 2vw, 3rem);
+    }
+
     .nav {
         display: flex;
         justify-content: center;

@@ -12,16 +12,13 @@
     </div>
     <nav class="menu">
         <span class="nav-toggle" id="navbar-menu"><i class="fas fa-bars"></i></span>
+        <p class="menu-branding">shunyaek</p>
     </nav>
     <nav class="nav" id="navbar">
         <a class="{{ index_active_state }}" href="{% url 'home' %}">Home</a>
         <a class="{{ shop_active_state }}" href="{% url 'shop:shop_home' %}">Presets</a>
         <a class="{{ blog_active_state }}" href="{% url 'blog:blog_home' %}">Blog</a>
-        <a href="#about">About</a>
         <a href="#about">Contact</a>
-        <div class="user-options">
-            <span>Hello, {{ request.user }}</span>
-            <span><a href="{% url 'brand:sign_out' %}">Sign-Out</a></span>
-        </div>
+        <a href="{% url 'brand:sign_out' %}">Sign-Out, {{ request.user }}</a>
     </nav>
 </header>
