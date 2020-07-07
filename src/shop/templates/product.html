@@ -63,7 +63,10 @@
             </p>
             <div class="options-box">
                 <div class="price-box"><i class="fas fa-dollar-sign"></i>8.99</div>
-                <button type="button" class="purchase-button"><i class="fas fa-credit-card"></i>Purchase</button>
+                <form id="product-form"" action="{% url 'shop:checkout' %}" method="POST">
+                    {% csrf_token %}
+                    <button form="product-form" type="submit" class="purchase-button"><i class="fas fa-credit-card"></i>Purchase</button>
+                </form>
                 <a href="#faqs" class="faqs-link"><i class="fas fa-question-circle"></i>FAQs</a>
             </div>
         </div>

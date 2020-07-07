@@ -114,7 +114,7 @@ header {
 }
 
 .nav a:hover {
-    display: inline-block;
+    display: block;
     padding-left: calc(var(--standard-padding) * 4);
     padding-right: calc(var(--standard-padding) * 4);
     padding-top: var(--standard-padding);
@@ -127,7 +127,7 @@ header {
 }
 
 .nav a.active {
-    display: inline-block;
+    display: block;
     padding-left: calc(var(--standard-padding) * 4);
     padding-right: calc(var(--standard-padding) * 4);
     padding-top: var(--standard-padding);
