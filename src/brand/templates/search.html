@@ -3,5 +3,15 @@
 {% block content %}
 <section class="blog-grid">
     <h1>Search results</h1>
+    <ul>Products
+        {% for product in product_list %}
+        <li>{{ product.title }}</li>
+        {% endfor %}
+    </ul>
+    <ul>Blog Posts
+        {% for blogpost in blogpost_list %}
+        <li>{{ blogpost.title }}</li>
+        {% endfor %}
+    </ul>
 </section>
 {% endblock %}

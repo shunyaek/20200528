@@ -4,6 +4,7 @@ from .views import (
     sign_up_view,
     sign_in_view,
     sign_out_view,
+    search_view,
 )
 
 app_name = "brand"

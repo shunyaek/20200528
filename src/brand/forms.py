@@ -85,8 +85,21 @@ class SignInForm(forms.ModelForm):
         }
 
 
-class SearchForm(forms.ModelForm):
+class SearchForm(forms.Form):
+    q = forms.CharField(
+        label="Search",
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search",
+                "class": "search-field",
+                "name": "q",
+                "type": "text",
+            }
+        ),
+    )
+
     class Meta:
         fields = {
-            "search",
+            "q",
         }

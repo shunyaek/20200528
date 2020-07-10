@@ -4,37 +4,51 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 from .forms import SearchForm, SignUpForm
 from blog.models import BlogPost
 from shop.models import Product
 
 
-def search_view(request, search_query, *args, **kwargs):
-    search_form = SearchForm(request.POST or None)
-    post_results = BlogPost.objects.all()
-    # post_results = BlogPost.objects.get(title__icontains=search_query)
-    if search_form.is_valid():
-        search_form.save()
-        search_form = SearchForm(request.POST or None)
+def search_view(request):
 
-    context = {
-        "search_form": search_form,
-    }
+    if request.method == "GET":
+        query = request.GET.get("q")
+        blogpost_list = BlogPost.objects.filter(
+            Q(title__icontains=query) | Q(content__icontains=query)
+        )
 
-    return render(request, "search.html", context)
+        product_list = Product.objects.filter(
+            Q(title__icontains=query) | Q(description__icontains=query)
+        )
+
+        context = {
+            "product_list": product_list,
+            "blogpost_list": blogpost_list,
+        }
+
+        return render(request, "search.html", context)
 
 
 def index_view(request, *args, **kwargs):
+
+    search_form = SearchForm(request.GET or None)
+
+    if search_form.is_valid():
+        search_form.save()
+        search_form = SearchForm(request.GET or None)
+
     context = {
         "index_active_state": "active",
+        "search_form": search_form,
     }
     return render(request, "index.html", context)
 
 
 def sign_up_view(request, *args, **kwargs):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect("home")
     else:
         form = SignUpForm()
         if request.method == "POST":
@@ -56,7 +70,7 @@ def sign_up_view(request, *args, **kwargs):
 
 def sign_in_view(request, *args, **kwargs):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect("home")
     else:
         if request.method == "POST":
             username = request.POST.get("username")
@@ -77,7 +91,7 @@ def sign_in_view(request, *args, **kwargs):
         return render(request, "account/sign_in.html", context)
 
 
-@login_required(login_url='brand:sign_in')
+@login_required(login_url="brand:sign_in")
 def sign_out_view(request, *args, **kwargs):
     logout(request)
-    return redirect('brand:sign_in')
+    return redirect("brand:sign_in")

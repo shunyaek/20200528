@@ -1,8 +1,6 @@
 <div class="search">
-    <form method="POST">
-        {% csrf_token %}
+    <form method="GET" action="{% url 'search' %}">
         {{ search_form.as_p }}
-        <input type="search" id="search-bar" name="search" placeholder="Search">
         <button type="submit"><i class="fas fa-search"></i></button>
     </form>
 </div>

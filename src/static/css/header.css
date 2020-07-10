@@ -65,6 +65,10 @@ header {
     color: var(--theme-color-secondary);
 }
 
+.search label {
+    display: none;
+}
+
 .search input {
     border: var(--placeholder-border);
     border-radius: 0.5rem;
