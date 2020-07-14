@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
+from django.http import JsonResponse
 
 import stripe
+import json
 
 from .models import Product
 from .forms import ProductForm
@@ -11,18 +13,39 @@ API_KEY = settings.STRIPE_SECRET_KEY
 
 
 def checkout_view(request):
-    if request.method == 'POST':
+
+    def pay():
         stripe.api_key = API_KEY
-        payment_intent = stripe.PaymentIntent.create(
-            amount=100,
-            currency='inr',
-            metadata={'integration_check': 'accept_a_payment'},
-        )
+        try:
+            intent = stripe.PaymentIntent.create(amount=500, currency="inr")
+            return intent["client_secret"]
+
+        except Exception as e:
+            return JsonResponse(error=str(e)), 403
+
+    context = {
+        "client_secret": pay(),
+        "STRIPE_PUBLISHABLE_KEY": settings.STRIPE_PUBLISHABLE_KEY,
+    }
+
+    return render(request, "checkout.html", context)
+
+    """ if request.method == "POST":
+        stripe.api_key = API_KEY
+        try:
+            # data = json.loads(request.data)
+            intent = stripe.PaymentIntent.create(amount=500, currency="inr")
+
+            return json.dumps({"clientSecret": intent["client_secret"]})
+
+        except Exception as e:
+            return json.dumps(error=str(e)), 403
+        
         context = {
-            "client_secret": payment_intent.client_secret,
+            "client_secret": intent.client_secret,
             "STRIPE_PUBLISHABLE_KEY": settings.STRIPE_PUBLISHABLE_KEY,
         }
-        return render(request, "checkout.html", context)
+        return render(request, "checkout.html", context) """
 
 
 def shop_view(request, *args, **kwargs):
