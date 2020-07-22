@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from csp.decorators import csp_exempt
 
 import stripe
 import json
@@ -19,7 +19,9 @@ def checkout_view(request):
     context = {
         "payment_amount": payment_amount,
     }
-    return render(request, "checkout.html", context)
+    response = render(request, "checkout.html", context)
+    response._csp_exempt = True
+    return response
 
 
 @csrf_exempt
@@ -35,10 +37,14 @@ def create_payment_intent_view(request):
                 metadata={"integration_check": "accept_a_payment"},
             )
 
-            return JsonResponse({"clientSecret": intent.client_secret})
+            response = JsonResponse({"clientSecret": intent.client_secret})
+            response._csp_exempt = True
+            return response
 
         except Exception as e:
-            return JsonResponse({"error": str(e)}, status=403)
+            response = JsonResponse({"error": str(e)}, status=403)
+            response._csp_exempt = True
+            return response
 
 
 def payment_complete_view(request):
