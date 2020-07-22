@@ -24,7 +24,7 @@ def checkout_view(request):
     return response
 
 
-@csrf_exempt
+@csp_exempt
 def create_payment_intent_view(request):
 
     if request.method == "POST":
