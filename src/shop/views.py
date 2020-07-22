@@ -13,6 +13,7 @@ from .forms import ProductForm
 API_KEY = settings.STRIPE_SECRET_KEY
 
 
+@csp_exempt
 def checkout_view(request):
     payment_amount = 4999
     context = {

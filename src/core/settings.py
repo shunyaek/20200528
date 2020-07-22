@@ -50,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "csp.middleware.CSPMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -130,3 +131,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Stripe setup
 STRIPE_SECRET_KEY = os.environ["STRIPE_SECRET_KEY"]
 STRIPE_PUBLISHABLE_KEY = os.environ["STRIPE_PUBLISHABLE_KEY"]
+
+CSP_DEFAULT_SRC = ("'self'", 'https://api.stripe.com', 'https://js.stripe.com', 'https://hooks.stripe.com')
+CSP_SCRIPT_SRC = ("'self'", 'https://api.stripe.com', 'https://js.stripe.com', 'https://hooks.stripe.com')
+CSP_STYLE_SRC = ("'self'", 'https://api.stripe.com', 'https://js.stripe.com', 'https://hooks.stripe.com')
+CSP_CONNECT_SRC = ("'self'", 'https://api.stripe.com', 'https://js.stripe.com', 'https://hooks.stripe.com')
