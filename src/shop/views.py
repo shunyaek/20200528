@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 import stripe
 import json
@@ -13,39 +14,34 @@ API_KEY = settings.STRIPE_SECRET_KEY
 
 
 def checkout_view(request):
-
-    def pay():
-        stripe.api_key = API_KEY
-        try:
-            intent = stripe.PaymentIntent.create(amount=500, currency="inr")
-            return intent["client_secret"]
-
-        except Exception as e:
-            return JsonResponse(error=str(e)), 403
-
+    payment_amount = 4999
     context = {
-        "client_secret": pay(),
-        "STRIPE_PUBLISHABLE_KEY": settings.STRIPE_PUBLISHABLE_KEY,
+        "payment_amount": payment_amount,
     }
-
     return render(request, "checkout.html", context)
 
-    """ if request.method == "POST":
+
+@csrf_exempt
+def create_payment_intent_view(request):
+
+    if request.method == "POST":
         stripe.api_key = API_KEY
         try:
-            # data = json.loads(request.data)
-            intent = stripe.PaymentIntent.create(amount=500, currency="inr")
+            data = json.loads(request.data)
+            intent = stripe.PaymentIntent.create(
+                amount=500,
+                currency="inr",
+                metadata={"integration_check": "accept_a_payment"},
+            )
 
-            return json.dumps({"clientSecret": intent["client_secret"]})
+            return JsonResponse({"clientSecret": intent.client_secret})
 
         except Exception as e:
-            return json.dumps(error=str(e)), 403
-        
-        context = {
-            "client_secret": intent.client_secret,
-            "STRIPE_PUBLISHABLE_KEY": settings.STRIPE_PUBLISHABLE_KEY,
-        }
-        return render(request, "checkout.html", context) """
+            return JsonResponse({"error": str(e)}, status=403)
+
+
+def payment_complete_view(request):
+    return render(request, "payment-complete.html")
 
 
 def shop_view(request, *args, **kwargs):

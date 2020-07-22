@@ -1,27 +1,30 @@
-{% extends 'base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html>
 
-{% block extra_imports %}
-<title>Checkout</title>
-<link rel="stylesheet" href="{% static 'css/payments.css' %}">
-<script src="https://js.stripe.com/v3/"></script>
-<script src="{% static 'javascript/payments.js' %}"></script>
-{% endblock %}
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://js.stripe.com/v3/; style-src 'self' 'unsafe-inline'; script-src 'self' http://127.0.0.1:8000/ https: https://js.stripe.com/v3/;">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    {% include 'checkout_extras.html' %}
+</head>
 
-{% block content %}
-<form id="payment-form">
-    {% csrf_token %}
-    <div id="card-element">
-        <!--Stripe.js injects the Card Element-->
-    </div>
-    <button id="submit">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Pay</span>
-    </button>
-    <p id="card-error" role="alert"></p>
-    <p class="result-message hidden">
-        Payment succeeded, see the result in your
-        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
-    </p>
-</form>
-{% endblock %}
+<body>
+    <form id="payment-form">
+        {% csrf_token %}
+        <div id="card-element">
+            <!--Stripe.js injects the Card Element-->
+        </div>
+        <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay</span>
+        </button>
+        <p id="card-error" role="alert"></p>
+        <p class="result-message hidden">
+            Payment succeeded, see the result in your
+            <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+        </p>
+    </form>
+</body>
+
+</html>
