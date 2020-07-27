@@ -4,22 +4,33 @@
 
 To run this project, install the required packages in a Python virtual environment.
 
-- To create an environment, use the following command
+To create an environment, use the following command
 ```bash
 python -m venv <environment_name>
 ```
 
-- To activate the environment, use the following command
+OPTIONAL: Update `pip`. Use the following commands on Linux and Windows respectively:
 ```bash
-source bin/activate
+pip install --upgrade pip
+```
+```powershell
+python -m pip install --upgrade pip
 ```
 
-- To deactivate the environment, use the following command
+To activate the environment, use the following commands on Linux and Windows respectively:
+```bash
+source env/bin/activate
+```
+```powershell
+.\env\Scripts\Activate.ps1
+```
+
+To deactivate the environment, use the following command
 ```bash
 deactivate
 ```
 
-- To install the dependencies, use the following command
+To install the dependencies, use the following command
 ```bash
 pip install -r requirements.txt
 ```
