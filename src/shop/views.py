@@ -1,19 +1,29 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from django.http import JsonResponse
 from csp.decorators import csp_exempt
+
+from django.views.generic import (
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    DeleteView,
+)
 
 import stripe
 import json
 
 from .models import Product
 from .forms import ProductForm
+from .forms import ProductImageForm
+from .forms import CategoryForm
 
 API_KEY = settings.STRIPE_SECRET_KEY
 
 
-@csp_exempt
+
 def checkout_view(request):
     payment_amount = 4999
     context = {
@@ -24,7 +34,7 @@ def checkout_view(request):
     return response
 
 
-@csp_exempt
+
 def create_payment_intent_view(request):
 
     if request.method == "POST":
@@ -66,26 +76,44 @@ def product_view(request, *args, **kwargs):
 
 
 def create_product_view(request, *args, **kwargs):
-    create_product_form = ProductForm(request.POST or None)
-    if create_product_form.is_valid():
-        create_product_form.save()
-        create_product_form = ProductForm(request.POST or None)
+    if request.method == "POST":
+        create_product_form = ProductForm(request.POST, request.FILES)
+        create_product_image_form = ProductImageForm(request.POST, request.FILES)
+        create_category_form = CategoryForm(request.POST, request.FILES)
+        if create_product_form.is_valid() & create_product_image_form.is_valid() & create_category_form.is_valid() :
+            create_product_form.save()
+            create_product_image_form.save()
+            create_category_form.save()
+            create_product_form = ProductForm()
+            create_product_image_form = ProductImageForm()
+            create_category_form = CategoryForm()
 
+    else:
+        create_product_form = ProductForm()
+        create_product_image_form = ProductImageForm()
+        create_category_form = CategoryForm()
     context = {
         "create_product_form": create_product_form,
+        "create_product_image_form": create_product_image_form,
+        "create_category_form": create_category_form,
+        "page_heading": "Create a new product",
+        "button_value": "Create",
     }
 
     return render(request, "create_product.html", context)
 
 
-def update_product_view(request, *args, **kwargs):
-    update_product_form = ProductForm(request.POST or None)
+def update_product_view(request, pk, *args, **kwargs):
+    product_object = get_object_or_404(Product, pk=pk)
+    update_product_form = ProductForm(request.POST and request.FILES, instance=product_object)
     if update_product_form.is_valid():
         update_product_form.save()
-        update_product_form = ProductForm(request.POST or None)
+        update_product_form = ProductForm()
 
     context = {
         "update_product_form": update_product_form,
+        "page_heading": "Update a product",
+        "button_value": "Update",
     }
 
     return render(request, "update_product.html", context)
