@@ -18,3 +18,6 @@ Contains some notes I took while developing this app. Might delete later.
 -   Enter the same password as before, for verification.
 
 harshit:helloworld
+
+## Pryanca.Co Rules
+
